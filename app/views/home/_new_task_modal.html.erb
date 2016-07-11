@@ -1,0 +1,28 @@
+
+	<div class="modal-dialog">
+	  	<div class="modal-content">
+	        <div class="modal-header">
+	          	<h4 class="modal-title" id="new-task-label">New Task</h4>
+	        </div>
+	        <div class="modal-body">
+	        	<%= form_for @task, :remote => true, :html=> {:id => 'task-form'} do |f| %>
+	          		<text class="form-label">Task Name: </text> <span class="form-field"><%= f.text_field :name %> </span> 
+	          		<br><br>
+
+	          		<text class="form-label">Goal (mins): </text> <span class="form-field"><%= f.text_field :goal %> </span> 
+	          		<br><br>
+
+	          		<text class="form-label">Time Period (hours): </text> <span class="form-field"><%= f.text_field :time_period %> </span> 
+	          		<br><br>
+
+	          		<text class="form-label">Description: </text> <span class="form-field"><%= f.text_area :description, size: "75x3" %> </span> 
+	          		<br><br>
+	          	<% end %>
+	          	
+	        </div>
+	        <div class="modal-footer">
+	          	<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+	          	<button type="button" class="btn btn-success" id="submit-task" data-dismiss="modal" > Submit </button>
+	        </div>
+	    </div>
+	</div>

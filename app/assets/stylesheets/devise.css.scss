@@ -1,0 +1,35 @@
+.register-fields {
+	max-width: 1200px;
+	width: 40%;
+	margin: 0 auto;
+	border: 1px black dashed;
+}
+
+.reg-label-wrap {
+	width: 47%;
+	height: 100%;
+	display: inline-block;
+}
+.reg-field-wrap {
+	width: 47%;
+	display: inline-block;
+	float: right;
+}
+.reg-field {
+	float: left;
+	width: 90%
+}
+
+.reg-label {
+	float: right;
+}
+
+#sign-up-head {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.actions {
+	float: right;
+	margin: 30px;
+}

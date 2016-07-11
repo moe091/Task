@@ -1,0 +1,28 @@
+<head>
+<%= stylesheet_link_tag    "tasks", :media => "all" %>
+</head>
+
+<body>
+	<div class="top-wrap">
+		<div class="task-head-div">
+			<h2 class="task-head"><%= @task.name %></h2>
+			<h3 class="head-back"><a href="/">Back</a></h3>
+		</div>
+
+		<div id="table-partial">
+			<%= render(:partial => "table") %>
+		</div>
+	</div>
+
+
+
+	<div id="sessions-partial">
+		<%= render(:partial => "sessions") %>
+	</div>
+	<div class="footer">
+		<%= link_to 'Edit', edit_task_path(@task) %> |
+		<%= link_to 'Back', tasks_path %>
+	</div>
+</body>
+
+

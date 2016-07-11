@@ -1,0 +1,113 @@
+<head>
+<%= stylesheet_link_tag    "home", :media => "all" %>
+
+	<style type="text/css" rel="stylesheet">
+	<% if user_signed_in? %>
+		<% num = 0 %>
+		<% @cur_user.tasks.each do |task| %>
+
+			.meter-bar-<%= task.id %> {
+				background-color: #2a2;
+				width: <%= task_percentage(task) %>%;
+				border-radius: 3px;
+			}
+
+
+
+			<% num = num + 1 %>
+		<% end %>
+	<% end %>
+
+	</style>
+
+	
+</head>
+
+
+<% if !user_signed_in? %>
+<div class="container main-div">
+	<div class="row main-div">
+		<div class="col-sm-10 main-div">
+		asdfsdf
+			<p>Welcome to TaskTimer, the simplest and easiest solution for time management and tracking, with no setup required!</p>
+			<br>
+			asdfasdf
+			<p>Sign in or Register to start tracking your tasks instantly!</p>
+		</div> <!-- column -->
+		
+	</div> <!-- main row -->
+</div> <!-- container -->
+
+<% else %> <!-- logged in -->
+
+	<div class="container login-container">
+		<div class="row login-row">
+		<div class="col-sm-2"></div>
+			<div class="col-sm-8 login-col main-div">
+				<div class="top-area">
+					<p class="users-tasks-text">
+						<h3><b><%= @cur_user.username %>'s Tasks</b></h3>
+					</p>
+				</div>
+
+				<br>
+				<br>
+			<% num = 0 %>
+				<% @cur_user.tasks.each do |task| %>
+					<div class="row task-row">
+						<div class="col-sm-12 task-col">
+							<p class='task-desc'><%= task.description %></p>
+							<h2 class='task-name'><%= task.name %></h3>
+						</div>
+
+						<!-- METER AREA -->
+						<div class="col-sm-2"></div>
+						<div class="col-sm-8 meter-container">
+							<!--Just Above Meter -->
+							<p class="time-period time-period-<%= task.id %>">1 Week</p>
+							<p class="time-remaining time-remaining-<%= task.id %>">4 days</p>
+
+							<!-- Meter -->
+							<div class="meter-back"></div>
+							<div class="meter-bar meter-bar-<%= task.id %>"></div>
+							<p class="meter-percent"><b><%= task_percentage(task) %>% </b></p>
+
+							<!-- Just Below Meter -->
+							<p class="time-completed time-completed-<%= task.id %>">Completed: <%= format_minutes(task.completed) %> / <%= format_minutes(task.goal) %> Hours</p>
+
+						</div> 
+						<!-- METER AREA -->
+
+						<div class="col-sm-12 task-button-col">
+							<div class="button-div">
+								<span class="timer-buttons">
+									<button type="button" id="quick-timer-<%= task.id %>" onclick="changeName(this, <%= task.id %>)" class="btn btn-success start-btn">Quick Timer</button>
+									<!-- <button type="button" id="start-<%= task.id %>" class="btn btn-danger stop-btn">Stop Timing</button> -->
+								</span>
+								<div class="button-to-wrap"> <!-- fix formatting because button_to wraps button in a form -->
+									<%= button_to("Show Task", {:controller => :tasks, :action => 'show', :id => task.id, remote: true}, {:method => :get, :class => "btn btn-primary task-btn"}) %>
+								</div>
+								<div class="button-to-wrap"> <!-- fix formatting because button_to wraps button in a form -->
+									<button type="button" class="btn btn-danger btn-small delete-btn">Delete</button>
+								</div>
+
+								<div class="timer-area" id="timer-<%= task.id %>">
+									<p id="seconds">0</p>
+									<br>
+									10:40
+								</div>
+
+							</div>
+						</div>
+						<div class="col-sm-2"></div>
+
+
+					</div> <!-- Task Row -->
+					<% num = num + 1 %>
+				<% end %>
+
+
+			</div>
+		</div>
+	</div>
+<% end %>

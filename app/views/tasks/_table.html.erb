@@ -1,0 +1,56 @@
+<table class="task-table">
+  <thead>
+    <tr>
+    	
+      <th colspan="4" class="table-header"><%= @task.name %></th>
+
+    </tr>
+  </thead>
+  
+  <tbody>
+		<tr class="row-description row-description-<%= @task.id %>">
+			<td class="task-property">Description</td>
+			<td class="task-value task-description task-description-<%= @task.id %>"><%= @task.description %></td>
+			<td class="edit"><a href="#">Edit</a></td>
+		</tr>
+
+		<tr class="row-completed row-completed-<%= @task.id %>">
+			<td class="task-property">Completed</td>
+			<td class="task-completed task-value"><%= format_minutes(@task.completed) %> Hours</td>
+			<td class="edit"><a href="#">Edit</a></td>
+		</tr>
+
+		<tr class="row-goal row-goal-<%= @task.id %>">
+			<td class="task-property">Goal</td>
+			<td class="task-value task-goal"><%= format_minutes(@task.goal) %> Hours</td>
+			<td class="edit"><a href="#">Edit</a></td>
+		</tr>
+
+		<tr class="row-percent row-percent-<%= @task.id %>">
+			<td class="task-property">Percent Completed</td>
+			<td class="task-value task-percent"><%= task_percentage(@task) %></td>
+			<td class="edit"><a href="#">Edit</a></td>
+		</tr>
+
+		<tr class="row-time-period row-time-period-<%= @task.id %>">
+			<td class="task-property">Time Period</td>
+			<td class="task-value task-period"><%= hours_in_words(@task.time_period) %></td>
+			<td class="edit"><a href="#">Edit</a></td>
+		</tr> 
+
+		<tr class="row-time-left row-time-left-<%= @task.id %>">
+			<td class="task-property">Time Left</td>
+			<td class="task-value task-left"><%= ending(@task) %></td>
+			<td class="edit"><a href="#">Edit</a></td>
+		</tr>
+
+		<tr class="row-recurring row-recurring-<%= @task.id %>">
+			<td class="task-property">Recurring?</td>
+			<td class="task-value task-recurring"> NO </td>
+			<td class="edit"><a href="#">Edit</a></td>
+		</tr>
+
+
+  </tbody>
+  
+</table>
