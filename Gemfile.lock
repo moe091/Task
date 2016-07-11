@@ -62,6 +62,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25.1)
     multi_json (1.12.1)
+    mysql2 (0.3.21)
     orm_adapter (0.5.0)
     pg (0.18.4)
     polyglot (0.3.5)
@@ -139,6 +140,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   jquery-rails
+  mysql2 (~> 0.3.10)
   pg (= 0.18.4)
   rails (= 3.2.16)
   rspec-rails
