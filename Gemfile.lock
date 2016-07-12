@@ -110,7 +110,7 @@ GEM
       rspec-mocks (~> 3.5.0)
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
-    sass (3.4.22)
+    sass (3.2.19)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -144,5 +144,6 @@ DEPENDENCIES
   pg (= 0.18.4)
   rails (= 3.2.16)
   rspec-rails
-  sass-rails (~> 3.2.3)
+  sass (~> 3.2.0)
+  sass-rails (~> 3.2.6)
   uglifier (>= 1.0.3)
