@@ -20,6 +20,22 @@
 	background-color: #00f;
 }
 
-.nav-login {
-	padding-right: 0px;
+
+.navbar-nav {
+	text-align: center;
 }
+
+
+.pull-sm-right.navbar-nav {
+	float: right; 
+}
+
+@media (max-width: 768px) {
+    .pull-sm-left {
+        float: none;
+    }
+    .pull-sm-right.navbar-nav {
+        float: none;
+    }
+}
+
