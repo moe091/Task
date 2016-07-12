@@ -11,8 +11,9 @@
  *= require_self
  *= require_tree .
   *= require bootstrap.min
- */
   *= require bootstrap.min.css
+ */
+  
 
 .devise-bar {
 	margin: 0 10px;
