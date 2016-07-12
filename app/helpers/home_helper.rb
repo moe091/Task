@@ -16,6 +16,11 @@ module HomeHelper
 		end
 	end
 
+	def time_togo(task)
+		hours = (task.goal - task.completed) / 60
+		minutes = (task.goal - task.completed) % 60
+		return format("%02d:%02d", hours, minutes)
+	end
 
 
 	def format_minutes(minutes)
