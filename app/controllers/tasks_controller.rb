@@ -11,9 +11,9 @@ class TasksController < ApplicationController
   def show
     @task = Task.find(params[:id])
     @duration = 1
-    respond_with(@task)
-
+    render :partial => "table", :layout => false
   end
+
 
   def new
     @task = Task.new

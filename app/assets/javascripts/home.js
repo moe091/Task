@@ -1,3 +1,28 @@
+
+
+
+
+function click_task(task_id) {
+	console.log(task_id);
+	$.ajax({
+		type: "GET",
+		url: "/tasks/" + task_id,
+
+		success: function(data) {
+			console.log("success");
+			console.log(data);
+			$("#main-partial").empty();
+			$("#main-partial").append(data);
+		}
+	})
+}
+
+
+
+
+
+
+
 // Timer vars
 var t;
 var seconds = 0;
