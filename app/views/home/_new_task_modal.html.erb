@@ -6,17 +6,84 @@
 	        </div>
 	        <div class="modal-body">
 	        	<%= form_for @task, :remote => true, :html=> {:id => 'task-form'} do |f| %>
-	          		<text class="form-label">Task Name: </text> <span class="form-field"><%= f.text_field :name %> </span> 
-	          		<br><br>
+	        		<div class="center-wrap">
+		          		<div class="detail-wrap name-wrap">
+			          		<text class="form-label">What Would You Like To Name This Task:</text> </br >
+			          		<text class="detail-text">What Would You Call The Task You Are Trying To Complete?</text>
+			          	</div>
+			          	<span class="form-field name-field"><%= f.text_field :name %> </span> 
+		          		<br />
 
-	          		<text class="form-label">Goal (mins): </text> <span class="form-field"><%= f.text_field :goal %> </span> 
-	          		<br><br>
+		          	</div>
 
-	          		<text class="form-label">Time Period (hours): </text> <span class="form-field"><%= f.text_field :time_period %> </span> 
-	          		<br><br>
+	          		<hr>
 
-	          		<text class="form-label">Description: </text> <span class="form-field"><%= f.text_area :description, size: "75x3" %> </span> 
-	          		<br><br>
+	          		<div class="center-wrap ">
+	          			<div class="detail-wrap">
+			          		<text class="form-label">Do You Want To Set A Time Period:</text> </br >
+			          		<text class="detail-text">Do you want to set a deadline for how long you have to complete this task?</text>
+			          	</div>
+			          		
+		          		<span class="form-toggle"> 
+		          			<%= f.radio_button :has_period, true, :onclick => "time_period_click(true)" %>
+				        	<%= f.label :has_period_true, "Yes" %>
+				        	<%= f.radio_button :has_period, false, :onclick => "time_period_click(false)" %>
+				        	<%= f.label :has_period_false, "No" %>
+		          		</span>
+		          	</div>
+
+		          	<div class="center-wrap">
+		          		<div class="hidden-field-wrap time-period-wrap">
+			          		<text class="form-label">How Long Do You Have To Complete This Task:<br /></text> 
+			          		<span class="form-field">
+			          			Days: <%= f.number_field :period_days, :value => 0, min: 0, id: "period-days", class: "period-input-text" %>  
+			          			Hours: <%= f.number_field :period_hours, :value => 0, min: 0, max: 23, id: "period-hours", class: "period-input-text" %> 
+			          			Minutes: <%= f.number_field :period_mins, :value => 0, min: 0, max: 59, id: "period-mins", class: "period-input-text" %>
+			          		</span> 
+			          		<br />
+
+			          		<div class="repeating">
+			          			<div class="detail-wrap recurring-detail-wrap">
+					          		<text class="form-label">Is This Task Recurring: </text> </br>
+					          		<text class="detail-text">Do You Want This Task To Reset At The End Of Each Time Period?</text>
+					          	</div>
+					          	<span class="form-field"><%= f.check_box :recurring %> </span>
+					          	<br />
+				          	</div>
+			          	</div>
+			        </div>
+
+		          	<hr>
+
+
+		          	<div class="center-wrap">
+		          		<div class="detail-wrap">
+				          	<text class="form-label">Does This Task Have A Time Goal:</text><br />
+				          	<text class="detail-text">Do You Have A Specific Amount Of Time You Aim To Spend On This Task?</text>
+				        </div>
+
+				        <span class="form-toggle"> 
+				        	<%= f.radio_button :has_goal, true, :onclick => "time_goal_click(true)" %>
+				        	<%= f.label :has_goal_true, "Yes" %>
+				        	<%= f.radio_button :has_goal, false, :onclick => "time_goal_click(false)" %>
+				        	<%= f.label :has_goal_false, "No" %>
+				        </span>
+				    </div>
+				    
+				    <div class="center-wrap"> 
+			          	<div class="hidden-field-wrap goal-wrap">
+			          		<text class="form-label">How Much Time Do You Aim To Spend Working On This Task:</text> <br />
+			          		<span class="form-field"> 
+			          			Hours: <%= f.number_field :goal_hours, :value => 0, min: 0, id: "goal-hours", class: "goal-input-text" %> 
+			          			Minutes: <%= f.number_field :goal_mins, :value => 0, min: 0, max: 59, id: "goal-mins", class: "goal-input-text" %>
+			          		</span> 
+			          	</div>
+			        </div>
+		          	
+
+	          		<hr>
+
+	          		<span class="form-label">Description:</span> <span class="form-field"><%= f.text_area :description, size: "75x2" %> </span> 
 	          	<% end %>
 	          	
 	        </div>

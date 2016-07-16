@@ -1,18 +1,30 @@
 module HomeHelper
 	def task_percentage(task)
-		return ((task.completed.to_f / task.goal) * 100).to_i
+		puts "\n\n\n\n\n\n\n\n\ncompleted:"
+		puts task.completed 
+		puts "\ngoal:"
+		puts task.goal
+		if (task.goal > 0)
+			return ((task.completed.to_f / task.goal) * 100).to_i
+		else 
+			return "N/A"
+		end
 
 	end
 
 	def ending(task)
-		hours = (((task.end_date - DateTime.now) / 1.hour).round)
-		days = ((task.end_date - DateTime.now) / 1.day).round
+		if (task.end_date)
+			hours = (((task.end_date - DateTime.now) / 1.hour).round)
+			days = ((task.end_date - DateTime.now) / 1.day).round
 
 
-		if hours < 24
-			return hours.to_s + " Hours"
+			if hours < 24
+				return hours.to_s + " Hours"
+			else
+				return days.to_s + " Days, " + (hours % 24).to_s + " Hours"
+			end
 		else
-			return days.to_s + " Days, " + (hours % 24).to_s + " Hours"
+			return "None"
 		end
 	end
 

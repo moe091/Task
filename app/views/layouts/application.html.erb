@@ -23,8 +23,11 @@
           <a class="navbar-brand" href="/">Task-Time</a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">Tasks</a></li>
+          <li><a href="/">Home</a></li>
+
+          <% if user_signed_in? %>
+            <li><a href="/">Tasks</a></li>
+          <% end %>
 
         </ul>
 

@@ -1,23 +1,40 @@
 <head>
 
 <%= stylesheet_link_tag    "home", :media => "all" %>
+<%= stylesheet_link_tag    "new-task-modal", :media => "all" %>
 
 <style type="text/css" rel="stylesheet">
 	<% if user_signed_in? %>
 		<%  @cur_user.tasks.each do |task| %>
+			<% if (task.goal == 0) %>
 
-			.meter-bar-<%= task.id %> {
-				background-color: #2a2;
-				width: <%= task_percentage(task) %>%;
-				max-width: 100%;
-				border-radius: 3px;
-			}
+				.meter-bar-<%= task.id %> {
+					display: none;
+				}
 
-			.percent-bar-<%= task.id %> {
-				width: <%= task_percentage(task) %>%;
-				max-width: 100%;
-			}
-			
+				.percent-bar-<%= task.id %> {
+					background-color: #cfcfcf;
+					width: 100%;
+				}
+
+				.percent-text-<%= task.id %> {
+					display: none;
+				}
+
+			<% else %>
+
+				.meter-bar-<%= task.id %> {
+					background-color: #2a2;
+					width: <%= task_percentage(task) %>%;
+					max-width: 100%;
+					border-radius: 3px;
+				}
+
+				.percent-bar-<%= task.id %> {
+					width: <%= task_percentage(task) %>%;
+					max-width: 100%;
+				}
+			<% end %>
 
 		<% end %>
 

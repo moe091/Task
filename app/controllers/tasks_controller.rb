@@ -31,18 +31,14 @@ class TasksController < ApplicationController
   end
 
   def create
-    puts "-"
-    puts current_user
-    puts "-"
-    @task = Task.new(params[:task])
-    @task.completed = 0
-    @task.end_date = DateTime.now + @task.time_period.hours
-    @task.start_date = DateTime.now
+    puts "\n\n\n\n\n\n\n\n"
+    puts params
+    puts "\n\n\n\n\n\n\n\n"
+
+    @task = create_task(params[:task])
     current_user.tasks << @task
-    puts "RENDER HOME/TABLE - TASK CREATE"
-    puts current_user.tasks
+
     @tasks = current_user.tasks
-    puts @tasks
     render :layout => false
   end
 
@@ -81,5 +77,38 @@ class TasksController < ApplicationController
   private
     def set_task
       @task = Task.find(params[:id])
+    end
+
+
+
+    def create_task(params) 
+      t = Task.new
+      t.completed = 0
+      t.name = params[:name]
+      t.recurring = params[:recurring]
+      t.description = params[:description]
+      t.start_date = DateTime.now
+      if (params[:has_goal])
+        puts "HAS GOAL"
+        puts "mins:"
+        puts params[:goal_mins]
+        puts "\nhours"
+        puts params[:goal_hours]
+        t.goal = params[:goal_mins].to_i + (params[:goal_hours].to_i * 60)
+        puts "goal = "
+        puts t.goal
+      else
+        puts "NO GOAL"
+        t.goal = 0
+      end
+
+      if (params[:has_period])
+        t.end_date = DateTime.now + params[:period_days].to_i.days + params[:period_hours].to_i.hours + params[:period_mins].to_i.minutes
+      else          
+        t.end_date = 0
+      end
+      puts "returning goal"
+      puts t.goal
+      return t
     end
 end

@@ -1,6 +1,14 @@
 module TasksHelper
 	def hours_in_words(hours)
-		distance_of_time_in_words(Time.at(0), Time.at(hours * 3600))
+		puts "\n\n\n\n\n\n\n\n\n"
+		puts "hours"
+		puts hours
+		puts "\n\n\n\n\n\n\n\n\n"
+		if (hours == nil)
+			return "None"
+		else
+			return distance_of_time_in_words(Time.at(0), Time.at(hours * 3600))
+		end
 	end
 
 	def longest_session(sessions)
