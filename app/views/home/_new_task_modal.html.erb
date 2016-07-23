@@ -6,90 +6,121 @@
 	        </div>
 	        <div class="modal-body">
 	        	<%= form_for @task, :remote => true, :html=> {:id => 'task-form'} do |f| %>
-	        		<div class="center-wrap">
-		          		<div class="detail-wrap name-wrap">
-			          		<text class="form-label">What Would You Like To Name This Task:</text> </br >
-			          		<text class="detail-text">What Would You Call The Task You Are Trying To Complete?</text>
-			          	</div>
-			          	<span class="form-field name-field"><%= f.text_field :name %> </span> 
-		          		<br />
 
-		          	</div>
+	        		<div class="task-step main-step" id="step-1">
 
-	          		<hr>
+		        		<div class="center-wrap">
+			        		<div class="detail-wrap name-wrap">
+			        			<text class="form-label">
+				        			<%= f.label :name_label, "What would you like to name this task: " %>
+				        		</text>
+				        		<text class="form-field">
+				        			<%= f.text_field :name %>
+				        		</text>
+				        	</div>
 
-	          		<div class="center-wrap ">
-	          			<div class="detail-wrap">
-			          		<text class="form-label">Do You Want To Set A Time Period:</text> </br >
-			          		<text class="detail-text">Do you want to set a deadline for how long you have to complete this task?</text>
-			          	</div>
-			          		
-		          		<span class="form-toggle"> 
-		          			<%= f.radio_button :has_period, true, :onclick => "time_period_click(true)" %>
-				        	<%= f.label :has_period_true, "Yes" %>
-				        	<%= f.radio_button :has_period, false, :onclick => "time_period_click(false)" %>
-				        	<%= f.label :has_period_false, "No" %>
-		          		</span>
-		          	</div>
+			        		<br />
+			        		<br />
 
-		          	<div class="center-wrap">
-		          		<div class="hidden-field-wrap time-period-wrap">
-			          		<text class="form-label">How Long Do You Have To Complete This Task:<br /></text> 
-			          		<span class="form-field">
+			        		<div class="detail-wrap">
+			        			<text class="form-label">
+				        			<%= f.label :period_label, "Do you want to set a time period for this task: " %>
+				        		</text>
+				        		<br />
+				        		<text class="detail-text"> A time period is a set amount of time you have to complete a task</text>
+				        		
+				        		<br />
+
+					        	<text class="form-field">
+					        		<%= f.label :period_true_label, "Yes" %>
+					        		<%= f.radio_button :has_period, true, :onclick => "time_period_click(true)", id: 'period-true' %>
+					        		<%= f.label :period_false_label, "No" %>
+					        		<%= f.radio_button :has_period, false, :onclick => "time_period_click(false)", id: 'period-false' %>
+					        	</text>
+				        	</div>
+
+		        			<br />
+		        			<br />
+
+		        			<div class="detail-wrap">
+		        				<text class="form-label">
+		        					<%= f.label :goal_label, "Would you like to set a goal for this task: " %>
+		        				</text>
+		        				<br />
+		        				<text class="detail-text"> A goal is a set amount of time you'd like to spend on a task</text>
+
+		        				<br />
+
+		        				<text class="form-field">
+		        					<%= f.radio_button :has_goal, true, :onclick => "time_goal_click(true)", id: 'goal-true' %>
+					        		<%= f.label :has_goal_true, "Yes" %>
+					        		<%= f.radio_button :has_goal, false, :onclick => "time_goal_click(false)", id: 'goal-true' %>
+					        		<%= f.label :has_goal_false, "No" %>
+					        	</text>
+
+		        			</div>
+
+		        			<br />
+		        			<br />
+
+		        			<div class="detail-wrap">
+		        				<text class="form-label">
+		        					<%= f.label :description_label, "Description (optional)" %>
+		        				</text>
+		        				<br />
+		        				<span class="form-field">
+		        					 <%= f.text_area :description, size: "45x2" %> 
+		        				</span>
+		        			</div> 
+
+		        				
+
+		        		</div> <!-- Center Wrap -->
+
+		        	</div><!-- End Step 1 -->
+
+		        	<div class="task-step period-step hidden" id="step-2">
+		        		<div class="center-wrap">
+		        			<%= f.label :period_field_label, "How long do you have to complete this task? " %>
+		        			<br />
+
+							<span class="form-field">
 			          			Days: <%= f.number_field :period_days, :value => 0, min: 0, id: "period-days", class: "period-input-text" %>  
 			          			Hours: <%= f.number_field :period_hours, :value => 0, min: 0, max: 23, id: "period-hours", class: "period-input-text" %> 
 			          			Minutes: <%= f.number_field :period_mins, :value => 0, min: 0, max: 59, id: "period-mins", class: "period-input-text" %>
 			          		</span> 
 			          		<br />
 
-			          		<div class="repeating">
-			          			<div class="detail-wrap recurring-detail-wrap">
-					          		<text class="form-label">Is This Task Recurring: </text> </br>
-					          		<text class="detail-text">Do You Want This Task To Reset At The End Of Each Time Period?</text>
-					          	</div>
-					          	<span class="form-field"><%= f.check_box :recurring %> </span>
-					          	<br />
-				          	</div>
-			          	</div>
-			        </div>
-
-		          	<hr>
+			          		<%= f.label :recurring_label, "Is this a recurring task? " %>
+			          		<br />
+			          		<text class="detail-text">A recurring task will reset and repeat at the end of the time period</text>
+			          		<br />
+			          		<span class="form-field"><%= f.check_box :recurring %> </span>
 
 
-		          	<div class="center-wrap">
-		          		<div class="detail-wrap">
-				          	<text class="form-label">Does This Task Have A Time Goal:</text><br />
-				          	<text class="detail-text">Do You Have A Specific Amount Of Time You Aim To Spend On This Task?</text>
-				        </div>
+		        		</div><!-- Center Wrap -->
+		        	</div><!-- End Step 2 -->
 
-				        <span class="form-toggle"> 
-				        	<%= f.radio_button :has_goal, true, :onclick => "time_goal_click(true)" %>
-				        	<%= f.label :has_goal_true, "Yes" %>
-				        	<%= f.radio_button :has_goal, false, :onclick => "time_goal_click(false)" %>
-				        	<%= f.label :has_goal_false, "No" %>
-				        </span>
-				    </div>
-				    
-				    <div class="center-wrap"> 
-			          	<div class="hidden-field-wrap goal-wrap">
-			          		<text class="form-label">How Much Time Do You Aim To Spend Working On This Task:</text> <br />
-			          		<span class="form-field"> 
+		        	<div class="task-step goal-step hidden" id="step-3">
+		        		<div class="center-wrap">
+		        			<%= f.label :goal_field_label, "How much time do you aim to spend on this task? " %>
+		        			<br />
+
+		        			<span class="form-field"> 
 			          			Hours: <%= f.number_field :goal_hours, :value => 0, min: 0, id: "goal-hours", class: "goal-input-text" %> 
 			          			Minutes: <%= f.number_field :goal_mins, :value => 0, min: 0, max: 59, id: "goal-mins", class: "goal-input-text" %>
 			          		</span> 
-			          	</div>
-			        </div>
-		          	
 
-	          		<hr>
+		        		</div><!-- Center Wrap -->
+		        	</div><!-- End Step 3 -->
 
-	          		<span class="form-label">Description:</span> <span class="form-field"><%= f.text_area :description, size: "75x2" %> </span> 
-	          	<% end %>
-	          	
-	        </div>
+
+
+	        	<% end %><!-- End form_for -->
+	        </div> <!-- Modal Body -->
 	        <div class="modal-footer">
 	          	<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-	          	<button type="button" class="btn btn-success" id="submit-task" data-dismiss="modal" > Submit </button>
+	          	<button type="button" class="btn btn-success" id="submit-task"> Submit </button>
 	        </div>
 	    </div>
 	</div>
