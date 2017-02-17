@@ -1,0 +1,69 @@
+.tasks-partial-div {
+	padding-top: 40px;
+	margin: 0 auto;
+	width: 1400px;
+}
+
+.tasks-wrapper-div {
+	margin: 0 auto;
+	width: 1400px;
+	text-align: center;
+
+}
+
+.task-div {
+	width: 350px;
+	height: 350px;
+	background-color: #FfF6F4;
+	border-radius: 5px;
+	border: 10px rgba(45, 86, 193, 0.5) solid;
+	display: inline-block;
+	margin: 5px 20px;
+	vertical-align:top
+}
+
+.task-description {
+	margin: 15px auto 10px auto;
+	padding: 4px;
+	border: 1px #ccc solid;
+	width: 300px;
+	height: 7em;
+	font-size: 1.4em;
+	line-height: 1.3em;
+	background-color: #EBEFFF;
+	overflow: ellipsis;
+	font-family: 'PT Serif', serif;
+}
+
+.task-name {
+	font-family: 'Roboto Slab', serif;
+	font-size: 1.8em;
+	background-color: #273952;
+	color: #eee;
+	min-height: 2em;
+	padding: 2px 3px 2px 3px;
+	display: block;
+}
+
+.task-due {
+	margin: 0 auto;
+	font-size: 1.2em;
+	font-weight: 600;
+}
+
+content {
+	background-color: rgba(88, 88, 88, 0.5);
+}
+/**
+
+.task-description {
+	margin: 15px auto 10px auto;
+	width: 86%;
+	background-color: #EBEFFF;
+	border: 1px #aaa solid;
+	font-size: 1.35em;
+	padding: 8px;
+	line-height: 1.4em;
+	text-align: left;
+	font-family: 'Playfair Display', serif;
+}

@@ -40,7 +40,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
-    daemons (1.2.3)
+    daemons (1.2.4)
     devise (3.5.10)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -90,12 +90,12 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
-    rake (11.2.2)
+    rake (11.3.0)
     rdoc (3.12.2)
       json (~> 1.4)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
-    rspec-core (3.5.1)
+    rspec-core (3.5.4)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
       diff-lcs (>= 1.2.0, < 2.0)
@@ -103,7 +103,7 @@ GEM
     rspec-mocks (3.5.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.5.0)
-    rspec-rails (3.5.1)
+    rspec-rails (3.5.2)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
@@ -133,7 +133,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.51)
-    uglifier (3.0.0)
+    uglifier (3.0.2)
       execjs (>= 0.3.0, < 3)
     warden (1.2.6)
       rack (>= 1.0)
@@ -154,3 +154,9 @@ DEPENDENCIES
   sass-rails (~> 3.2.6)
   thin
   uglifier (>= 1.0.3)
+
+RUBY VERSION
+   ruby 1.9.3p551
+
+BUNDLED WITH
+   1.13.2

@@ -14,7 +14,7 @@ box-shadow: 4px 4px 13px 1px rgba(0,0,0,0.75);
 }	
 
 .navbar {
-	margin-bottom: 0;
+	margin-bottom: 0 !important;
 }
 
 #table-partial {
@@ -116,7 +116,7 @@ td {
 	margin: 0 auto;
 	text-align: center;
 	display: inline;
-	color: #000;
+	color: #f3f3f3;
 }
 
 #sessions-partial {
@@ -130,7 +130,7 @@ background: #F1F0FF;
 }
 
 .session-container {
-	background-color: #f2f3fe;
+	background-color: #323232;
 }
 
 .session-box {

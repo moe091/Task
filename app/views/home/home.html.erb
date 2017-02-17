@@ -2,6 +2,9 @@
 
 <%= stylesheet_link_tag    "home", :media => "all" %>
 <%= stylesheet_link_tag    "new-task-modal", :media => "all" %>
+<%= stylesheet_link_tag		"task_list_style", :media => "all" %>
+
+<link href="https://fonts.googleapis.com/css?family=PT+Serif|Roboto+Slab" rel="stylesheet">
 
 <style type="text/css" rel="stylesheet">
 	<% if user_signed_in? %>
@@ -40,13 +43,76 @@
 
 	<% end %>
 </style>
-
+ 
 	
 </head>
 <body>
 
+<header>
 
+		<div class="left-head">
+			<H1>Welcome to Task-Time!</H1>
+			<h3>Task-Time is a free task and time management app. My goal was to create a simple, intuitive, and easy to use app that helps users keep track of tasks they need to complete as well as managing and tracking their time to help keep them productive and accountable for their time. If you have any comments or suggestions about the app,
+			including bugs, new feature requests or ideas, constructive criticism, or anything else, shoot an email to MNowicki091@gmail.com</h3>
+		</div>
+		<div class="right-head">
+			<div class="create-task-div">
+
+			</div>
+		</div>
+
+</header>
+
+<content>
 <% if @cur_user %>
+	<div class="tasks-partial-div">
+
+			<div class="tasks-wrapper-div">
+
+				<% @tasks.each do |task| %>
+					<div class="task-div task-div-<%= task.id %>">
+						<span class="task-name task-name-<%= task.id %>"><%= task.name %></span>
+						<div class="task-description task-description-<%= task.id %>">
+							<%= task.description %>
+						</div>
+						<span class="task-due task-due-<%= task.id %>"><%= format_due_date(task) %></span>
+
+
+						<div class="task-timer-div task-timer-div-<%= task.id %>">
+
+						<% if task.timed %>
+							<% if task.goal > 0 %>
+								<!--timed and goal, render progress meter -->
+
+							<% else %>
+								<!-- timed with no goal, render progress completed -->
+
+							<% end %>
+						<% else %>
+							<% if task.end_date %>
+								<!-- not timed, but has end date. render days/hours/minutes left -->
+
+							<% else %>
+								<!-- not timed and no end date, render "No Due Date" -->
+
+							<% end %>
+						<% end %>
+						
+
+						</div>
+
+
+
+					</div>
+				<% end %>
+
+			</div>
+
+	</div>
+<% end %>
+</content>
+
+<% if @cur_user && false %>
 <div class="header-div">
 
 	<h1 class="my-tasks"><%= @cur_user.username %>'s Tasks</h1>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20160715190013) do
+ActiveRecord::Schema.define(:version => 20170216201519) do
 
   create_table "sessions", :force => true do |t|
     t.datetime "start"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20160715190013) do
     t.integer  "completed"
     t.integer  "time_period"
     t.boolean  "recurring",   :default => false
+    t.boolean  "timed"
   end
 
   add_index "tasks", ["user_id"], :name => "index_tasks_on_user_id"

@@ -1,4 +1,19 @@
 module HomeHelper
+
+	def format_due_date(task) 
+		if (task.end_date)
+			return task.end_date.strftime("Due on %m/%d/%y")
+		else
+			return task.start_date.strftime("Started on %m/%d/%y")
+		end
+	end
+
+
+
+
+
+
+
 	def task_percentage(task)
 		puts "\n\n\n\n\n\n\n\n\ncompleted:"
 		puts task.completed 
