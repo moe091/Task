@@ -1,3 +1,4 @@
+/** 
 var seconds = 0;
 var timing = false;
 var startTime = null;
@@ -10,27 +11,6 @@ function reset_timer() {
 	endTime = null;
 }
 
-
-function startTimer() {
-	if (startTime == null)
-		startTime = new Date();
-	console.log(startTime);
-	timing = true;
-	timer();
-}
-
-function timer() {
-    t = setTimeout(add, 1000);
-}
-
-function add() {
-	if (timing) {
-		seconds++;
-		
-		$(".session-duration-new").html(seconds_in_time(seconds));
-		timer();
-	}
-}
 
 
 function stopTimer(task) {
@@ -91,3 +71,4 @@ function seconds_in_time(seconds) {
 
 	return time[hours] + ":" + time[mins] + ":" + time[secs];
 }
+**/

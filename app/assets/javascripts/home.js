@@ -1,28 +1,197 @@
-// Timer vars
-var t;
+//_____________FORM____________\\
+function goal_clicked() {
+	console.log("goal-clicked");
+	if ($("#task_has_goal").is(":checked")) {
+		console.log("checked");
+		$(".create-task-goal-div").show();
+	} else {
+		console.log("unckecked");
+		$(".create-task-goal-div").hide();
+	}
+}
+
+function timed_clicked() {
+	if ($("#task_timed").is(":checked")) {
+		$("#task_has_goal").show();
+		$("#has-goal-span").show();
+		$("#has-goal-span").css("display", "inline-block");
+	} else {
+		$("#task_has_goal").hide();
+		$("#has-goal-span").hide();
+		$("#task_has_goal").attr("checked", false);
+		goal_clicked();
+	}
+}
+
+
+
+//_____________TIMER___________\\
 var seconds = 0;
+var timing = false;
+var startTime = null;
+var endTime = null;
+var running = false;
+var task_id;
+
+function reset_timer() {
+	console.log("reset_timer");
+	seconds = 0;
+	timing = false;
+	startTime = null;
+	endTime = null;
+	$("#session-clock").html(seconds_in_time(seconds));
+	console.log(seconds_in_time(seconds));
+}
 
 
-
-
-
-
-
-// Timer functionality
-function startTimer() {
+function start_timer() {
+	if (startTime == null)
+		startTime = new Date();
+	console.log(startTime);
+	timing = true;
 	timer();
 }
+
 
 function timer() {
     t = setTimeout(add, 1000);
 }
 
+
 function add() {
-	seconds++;
-	$("#seconds").html(seconds);
-	timer();
+	if (timing) {
+		seconds++;
+		$("#session-clock").html(seconds_in_time(seconds));
+		timer();
+	}
 }
 
+
+
+
+function end_session() {
+	timing = false;
+	$.ajax({
+		type: "POST",
+		url: "/home/end_session",
+		datatype: "json",
+		data: {duration: seconds, start: Number(startTime) / 1000, end: Number(endTime) / 1000, task_id: task_id},
+		success: function(data) {
+			console.log(data);
+			if (data.task.goal > 0) {
+				$(".percent-front-" + task_id.toString()).width(data.percent.toString() + "%");
+				$(".percentage-text-" + task_id.toString()).html(data.percent.toString() + "%");
+				$(".completed-detail-" + task_id.toString()).html("Completed: " + format_time(data.task.completed) + " / " + format_time(data.task.goal));
+			} else {
+				$(".completed-detail-" + task_id.toString()).html("Completed " + format_time(data.task.completed));
+			}
+		}
+	});
+
+	$("#session-modal").modal("hide");
+}
+
+
+
+
+function edit_task(task) {
+	console.log(task);
+	console.log("Edit Task");
+	$("#session-modal").modal("show");
+}
+
+
+//MODAL BUTTONS
+function new_session(id, name, description) {
+	$("#session-modal").modal("show");
+	task_id = id;
+	$("#session-modal h1").html(name);
+	$("#session-modal p").html(description);
+	reset_timer();
+}
+
+
+function start_session() {
+	if (!timing) {
+		$("#ses-stop-btn").removeClass("hidden");
+		$("#ses-start-btn").addClass("hidden");
+
+		$("#ses-close-btn").prop("disabled", true);
+		start_timer();
+	}
+
+}
+
+
+function pause_session() {
+	timing = false;
+	endTime = new Date();
+	$("#ses-start-btn").removeClass("hidden");
+	$("#ses-stop-btn").addClass("hidden");
+	$("#ses-close-btn").prop("disabled", false);
+}
+
+
+
+
+
+
+//helper methods
+function seconds_in_time(seconds) {
+	var hours = 0, mins = 1, secs = 2;
+	var time = [];
+
+	time[hours] = Math.floor(seconds / 3600);
+	time[mins] = Math.floor((seconds / 60)) % 60;
+	time[secs] = seconds % 60;
+
+	for(var i = 0; i <= 2; i++)
+		if (time[i] < 10)
+			time[i] = "0" + time[i];
+
+
+	return time[hours] + ":" + time[mins] + ":" + time[secs];
+}
+
+
+function format_time(secs) {
+	var m = Math.floor(secs / 60);
+	var s = secs % 60;
+	if (m < 10)
+		m = "0" + m.toString();
+	else
+		m = m.toString();
+
+	if (s < 10)
+		s = "0" + s.toString();
+	else
+		s = s.toString();
+
+	return m + ":" + s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//OLD - Saving in case I need to reuse any code during redesign
 
 // New Task Modal
 
@@ -35,18 +204,16 @@ function show_task_modal() {
 		url: "/tasks/new",  // Call tasks#new controller
 	    data: {user_id: "<%= @cur_user %>"}, // testing
 
-		success: function(data) { // if ajax message is successful 
+		success: function(data) { 
 		    console.log("AJAX SUCCESS");
 		    console.log(data);
 		    console.log("<%= @cur_user %>");
 		    $("#new-task-modal").empty();
 		    $("#new-task-modal").append(data); // insert the data returned from tasks#new (new task model partial) into modal-partial div
-		    $("#new-task-modal").modal("show"); // call 'show' on bootstrap modal
+		    $("#new-task-modal").modal("show"); 
 
 		    step = 1
 		    cur_step = "#step-1"
-		    //ARTICLE IDEA - how to do unobtrusive js with ajax:
-			//Unobtrusive JS. These items aren't available when form loads, unobtrusive js must be added here.
 				//because submit button for new task form is outside of form, I must manually submit form when it's clicked:
 			 	$('#submit-task').on('click', function() { //when "#submit-task" button is clicked
 			 		next_step();

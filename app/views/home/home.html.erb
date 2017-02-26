@@ -3,7 +3,8 @@
 <%= stylesheet_link_tag    "home", :media => "all" %>
 <%= stylesheet_link_tag    "new-task-modal", :media => "all" %>
 <%= stylesheet_link_tag		"task_list_style", :media => "all" %>
-
+<%= stylesheet_link_tag		"new_task_style", :media => "all" %>
+<% @task = Task.new %>
 <link href="https://fonts.googleapis.com/css?family=PT+Serif|Roboto+Slab" rel="stylesheet">
 
 <style type="text/css" rel="stylesheet">
@@ -37,6 +38,10 @@
 					width: <%= task_percentage(task) %>%;
 					max-width: 100%;
 				}
+
+				.percent-front-<%= task.id %> {
+					width: <%= task_percentage(task) %>%;
+				}
 			<% end %>
 
 		<% end %>
@@ -57,7 +62,33 @@
 		</div>
 		<div class="right-head">
 			<div class="create-task-div">
+				<h1>Create New Task</h1>
 
+				<%= form_for @task, :url => url_for(:controller => 'tasks', :action => 'create'), html: {class: "new-task-form"} do |f| %>
+					<%= f.label "Task Name" %>
+					<%= f.text_field :name, size: "36" %>
+					<br />
+					<%= f.label "Task Description" %>
+					<%= f.text_area :description, cols: "35", rows: "4" %>
+					<br />
+
+
+					<div class="create-task-timing-div">
+						<%= f.label "Timed" do %>
+							<span id="is-timed-span">Timed: </span> <%= f.check_box :timed, onclick: "timed_clicked()" %>
+						<% end %>
+						<br />
+						<%= f.label "Goal" do %>
+							<span id="has-goal-span">Has Goal: </span> <%= f.check_box :has_goal, onclick: "goal_clicked()" %>
+						<% end %>
+						<div class="create-task-goal-div">
+						<%= f.label "Time" do %>
+							Hours: <%= f.text_field :hours, size: "4" %> Minutes <%= f.text_field :minutes, size: "4" %>
+						<% end %>
+						</div>
+					</div>
+
+				<% end %>
 			</div>
 		</div>
 
@@ -65,6 +96,33 @@
 
 <content>
 <% if @cur_user %>
+
+	<div class="modal fade" id="session-modal" data-backdrop="static" data-keyboard="false">
+
+		<div class="modal-dialog" role="document">
+			<div class="modal-content new-session-content"> 
+
+				<div class="modal-header">
+					<h1>New Session</h1>
+				</div>
+
+				<div class="modal-body">
+					<p>No Description.</p>
+					<h3>Session Time:</h3>
+					<h2 id="session-clock"> 00:00:00 </h2>
+				</div>
+
+				<div class="modal-footer">
+					<button onclick="start_session()" class="btn btn-info start-session-btn" id="ses-start-btn">Start Session</button>
+					<button onclick="pause_session()" class="stop-session-btn btn btn-warning hidden" id="ses-stop-btn">Pause Session</button>
+					<button onclick="end_session()" class="close-session-btn btn btn-danger" id="ses-close-btn">End Session</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
 	<div class="tasks-partial-div">
 
 			<div class="tasks-wrapper-div">
@@ -80,35 +138,59 @@
 
 						<div class="task-timer-div task-timer-div-<%= task.id %>">
 
-						<% if task.timed %>
-							<% if task.goal > 0 %>
-								<!--timed and goal, render progress meter -->
+							<% if task.timed %>
+								<% if task.goal > 0 %>
+									<!--timed and goal, render progress meter -->
+									<div class="percent-back percent-back-<%= task.id %>">
+										<div class="percent-front percent-front-<%= task.id %>">
 
+										</div>
+										<span class="percentage-text percentage-text-<%= task.id %>"><%= task_percentage(task) %>%</span>
+									</div>
+									<div class="percentage-details percentage-details-<%= task.id %>">
+										<span class="completed-detail completed-detail-<%= task.id %>">Completed: <%= format_minutes(task.completed) %> / <%= format_minutes(task.goal) %></span>
+										<span class="goal-detail">Goal: <%= format_minutes(task.goal) %></span>
+									</div>
+								<% else %>
+									<!-- timed, no goal -->
+									<div class="details nogoal-details nogoal-details-<%= task.id %>">
+										<span class="nogoal-elapsed-detail">Started <%= format_elapsed(Time.parse(task.start_date.to_s), Time.now) %> ago.</span>
+										<span class="completed-detail completed-detail-<%= task.id %>">Completed <%= format_minutes(task.completed) %></span>
+										<span class="goal-detail">Ends in <%= format_elapsed(Time.now, Time.parse(task.end_date.to_s)) %> </span>
+									</div>
+								<% end %>
 							<% else %>
-								<!-- timed with no goal, render progress completed -->
-
+								<% if task.end_date %>
+									<!-- untimed, has due date -->
+									<div class="details untimed-details untimed-details-<%= task.id %>">
+										<span class="time-left"><%= format_elapsed(Time.now, Time.parse(task.end_date.to_s)) %> Until Due</span>
+									</div>
+								<% else %>
+									<!-- untimed, no due date -->
+									<div class="details untimed-nodate-details untimed-nodate-details-<%= task.id %>">
+										No Due Date, Untimed Task.
+									</div>
+								<% end %>
 							<% end %>
-						<% else %>
-							<% if task.end_date %>
-								<!-- not timed, but has end date. render days/hours/minutes left -->
-
-							<% else %>
-								<!-- not timed and no end date, render "No Due Date" -->
-
-							<% end %>
-						<% end %>
-						
 
 						</div>
+						
+						<div class="start-date">Started On<br><%= format_date(task.start_date) %></div>
 
+						<div class="task-buttons">
+							<% if task.timed %>
+								<button onclick="new_session(<%= task.id %>, '<%= task.name %>', '<%= task.description %>')" class="btn btn-success btn-sm new-session-btn" data-controls-modal="session-modal">New Session</button>
+							<% end %>
 
-
+							<button onclick="edit_task(<%= task.id %>, <%= task.name %>, <%= task.description %>)" class="btn btn-primary btn-sm edit-task-btn">Edit Task</button>
+						</div>
 					</div>
 				<% end %>
 
 			</div>
 
 	</div>
+
 <% end %>
 </content>
 

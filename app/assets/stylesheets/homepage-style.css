@@ -46,11 +46,125 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', end
 }
 
 
+.task-div {
+	position: relative;
+}
 
+.percent-back {
+	display: -webkit-flex;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: content-box;
+	margin: 0 auto;
+	width: 250px;
+	height: 30px;
+	background-color: #444;
+	border: 3px black solid;
+	position: relative;
+	z-index: 0;
+}
 
-content {
+.percent-front {
+	display: -webkit-flex;
+	display: flex;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 50%;
+	background-color: #30b92a;
+	z-index: 1;
+}
+
+.percentage-text {
+	font-size: 1.5em;
+	font-weight: 700;
+	color: #f4f4f4;
+	position: relative;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+}
+
+.percentage-details {
+	margin: 0 auto;
+	width: 250px;
+	height: 40px;
+	font-weight: 700;
+	color: #606060;
+	line-height: 1.5em;
+}
+
+.completed-detail {
+	float: left;
 
 }
+
+.goal-detail {
+	float: right;
+}
+
+.nogoal-elapsed-detail {
+	font-size: 1.3em;
+	font-style: italic;
+	margin: 0 auto;
+}
+
+.details {
+	margin: 0 auto;
+	width: 280px;
+	height: 60px;
+	border: 1px black solid;
+	background-color: #fff;
+}
+
+.nogoal-details .completed-detail {
+	padding-left: 3px;
+	font-weight: 700;
+}
+
+.nogoal-details .goal-detail {
+	padding-right: 3px;
+	font-weight: 700;
+	font-size: 1em;
+}
+
+.untimed-details {
+	height: 35px;
+}
+
+
+.untimed-details .time-left {
+	font-size: 1.3em;
+}
+
+.untimed-nodate-details {
+	height: 35px;
+	font-size: 1.3em;
+}
+
+
+.start-date {
+	position: absolute;
+	bottom: 0;
+	left: 5px;
+	font-size: 1.1em;
+	line-height: 1.4em;
+}
+
+
+
+
+
+
+
+.task-buttons {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+}
+
 
 .center {
 	margin: 0 auto;

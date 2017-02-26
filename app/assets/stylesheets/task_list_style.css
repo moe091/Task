@@ -14,7 +14,7 @@
 .task-div {
 	width: 350px;
 	height: 350px;
-	background-color: #FfF6F4;
+	background-color: #F8F9Ff;
 	border-radius: 5px;
 	border: 10px rgba(45, 86, 193, 0.5) solid;
 	display: inline-block;
@@ -50,6 +50,7 @@
 	font-size: 1.2em;
 	font-weight: 600;
 }
+
 
 content {
 	background-color: rgba(88, 88, 88, 0.5);

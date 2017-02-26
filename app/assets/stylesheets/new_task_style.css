@@ -1,0 +1,48 @@
+.create-task-div h1 {
+	text-align: center;
+	color: #000;
+	font-family: 'Roboto Slab', serif;
+}
+
+.new-task-form {
+	width: 60%;
+	margin: 0 auto;
+	color: #000;
+}
+
+.new-task-form label {
+	font-size: 1.6em;
+	vertical-align: text-bottom;
+	line-height: 34px;
+}
+.new-task-form input, .new-task-form textarea {
+	float: right;
+	font-size: 1em;
+	height: 30px;
+}
+
+.create-task-timing-div {
+	clear: right;
+	padding: 10px;
+	border: 1px black solid;
+	text-align: center;
+	line-height: 1em;
+}
+
+#task_timed, #task_has_goal {
+	height: 26px;
+	margin-left: 30px;
+}
+
+#task_has_goal, #has-goal-span {
+	display: none;
+}
+
+.create-task-goal-div {
+	display: none;
+}
+
+.create-task-goal-div input {
+	float: none;
+}
+

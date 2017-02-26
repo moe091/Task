@@ -9,11 +9,17 @@ Tasktime::Application.routes.draw do
     root to: 'home#home'
     match '/sessions/user', to: 'devise/sessions#create', via: :post
   end
+
+  post 'home/end_session' => 'home#end_session', :as => :end_session
+
   post 'tasks/create_session' => 'tasks#create_session', :as => :create_session
   post 'tasks/start_timer' => 'tasks#start_timer', :as => :start_timer
   post 'tasks/stop_timer' => 'tasks#stop_timer', :as => :stop_timer
+
   get 'tasks/show_sessions/:id' => 'tasks#show_sessions'
   get 'home/task_table' => 'home#task_table'
+
+
   root :to => "home#home"
 
 

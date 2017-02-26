@@ -67,6 +67,11 @@ class TasksController < ApplicationController
     Task.find(params[:task_id]).sessions << @session
   end
 
+  def stop_timer
+    puts "---------------------\n\n\n\n\n\n\n\nSTOP_TIMER\n\n\n\n\n\n\n\n\n------------------"
+    puts params
+    puts "-------------------------------------------------llllllllllllll---------------------------------"
+  end
   def show_sessions
     puts "\n\n\n\n\n\n\n SHOW SESSIONS \n\n\n\n\n\n"
     @task = Task.find(params[:id])

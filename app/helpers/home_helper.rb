@@ -8,6 +8,10 @@ module HomeHelper
 		end
 	end
 
+	def format_date(date) 
+		return date.strftime("%m/%d/%y")
+	end
+
 
 
 
@@ -15,11 +19,7 @@ module HomeHelper
 
 
 	def task_percentage(task)
-		puts "\n\n\n\n\n\n\n\n\ncompleted:"
-		puts task.completed 
-		puts "\ngoal:"
-		puts task.goal
-		if (task.goal > 0)
+		if (task.goal && task.goal > 0)
 			return ((task.completed.to_f / task.goal) * 100).to_i
 		else 
 			return "N/A"
@@ -50,6 +50,17 @@ module HomeHelper
 		mins = minutes % 60
 
 		return format("%02d:%02d", hours, mins)
+	end
+
+	def format_elapsed(start, end_time) 
+		puts "\n\n\n\n\n\n------------------"
+		puts "start - " + start.to_s;
+		puts "end - " + end_time.to_s;
+		minutes = (end_time - start) / 1.minute
+		days = minutes / 1440
+		hours = (minutes % days) / 60
+		mins = minutes % 60
+		return format("%2d Days, %02d Hours, %02d Minutes", days, hours, mins)
 	end
 
 	def sort_percentage(tasks) 
