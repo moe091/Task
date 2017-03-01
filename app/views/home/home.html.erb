@@ -98,14 +98,16 @@
 
 
 					<div class="create-task-timing-div">
-						
+						<%= f.label "Timed" do %>
 							<span id="is-timed-span">Timed?: </span> <%= f.check_box :timed, onclick: "timed_clicked()" %>
-						
+						<% end %>
+						<%= f.label "Goal" do %>
 							<span id="has-goal-span">Goal?: </span> <%= f.check_box :has_goal, onclick: "goal_clicked()" %>
-						
+						<% end %>
 						<div class="create-task-goal-div">
+							<%= f.label "Time" do %>
 								Hours: <%= f.text_field :hours, size: "4" %> Minutes <%= f.text_field :minutes, size: "4" %>
-							
+							<% end %>
 						</div>
 						<br />
 						<%= f.label "due_date", class: "due-date-label" do %>
