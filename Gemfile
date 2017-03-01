@@ -9,6 +9,7 @@ gem 'bootstrap-datepicker-rails', '>= 0.6.21'
 group :development do 
 	gem 'mysql2', '~> 0.3.10'
 end
+
 group :production do
 	gem 'pg', '0.18.4'
 	gem 'thin'
