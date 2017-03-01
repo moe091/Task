@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '2.3.1'
-gem 'rails', '3.2.16'
+gem 'rails', '3.2.16'  
 gem 'momentjs-rails'
 gem 'bootstrap-datepicker-rails', '>= 0.6.21'
 # Bundle edge Rails instead:
