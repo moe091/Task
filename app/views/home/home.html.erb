@@ -105,9 +105,10 @@
 							<span id="has-goal-span">Goal?: </span> <%= f.check_box :has_goal, onclick: "goal_clicked()" %>
 						<% end %>
 						<div class="create-task-goal-div">
-							<%= f.label "Time" do %>
-								Hours: <%= f.text_field :hours, size: "4" %> Minutes <%= f.text_field :minutes, size: "4" %>
-							<% end %>
+								<div class="time-inputs">
+									Hours: <%= f.text_field :hours, size: "4" %> 
+									Minutes <%= f.text_field :minutes, size: "4" %>
+								</div>
 						</div>
 						<br />
 						<%= f.label "due_date", class: "due-date-label" do %>
@@ -122,7 +123,6 @@
 						     	</i>
 						    </span>
 						</div>
-
 						<script type="text/javascript">
 						  	$(function() {
 						    	$('#datetimepicker').datetimepicker({
@@ -131,9 +131,11 @@
 						      		pick12HourFormat: true
 						    	});
 						  	});
-						</script>  
-					</div>
+						</script>
 
+
+					</div>
+					<%= f.button "Submit", class: "new-task-submit btn btn-success" %>
 				<% end %>
 			</div>
 		</div>

@@ -1,3 +1,6 @@
+.create-task-div {
+	position: relative;
+}
 .create-task-div h1 {
 	text-align: center;
 	color: #000;
@@ -34,13 +37,20 @@
 	clear: right;
 	padding: 10px;
 	line-height: 1em;
+	text-align: center;
+	background-color: #eaf4fd;
 }
 
 .create-task-timing-div label {
 	margin: 3px 20px;
 }
 
+.time-inputs {
+	text-align: center;
+}
 #task_hours, #task_minutes {
+	display: inline-block;
+	float: none;
 	width: 2em;
 }
 
@@ -56,7 +66,7 @@
 .create-task-goal-div {
 	margin-top: 8px;
 	display: none;
-}d
+}
 
 .create-task-goal-div input {
 	float: none;
@@ -66,7 +76,6 @@
 	display: block;
 	text-align: center;
 }
-
 
 
 
@@ -83,4 +92,10 @@
 #date-field {
 	float: none !important; 
 	height: 25px !important;
+}
+
+.new-task-submit {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
 }
