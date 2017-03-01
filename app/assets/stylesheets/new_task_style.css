@@ -78,9 +78,13 @@
 }
 
 
-
+.add-on {
+	height: 25px !important;
+	width: 25px !important;
+}
 #datebtn-back {
 	 height: 25px !important; 
+	 width: 25px !important;
 }
 
 #datetimepicker {
