@@ -1,0 +1,144 @@
+<style>
+	<% longest = longest_session(@task.sessions) %>
+	<% @task.sessions.each do |session| %>
+		<% percent = percent_of_longest(session, @task.sessions) %>
+		.circle-cover-<%= session.id %> {
+			height: <%= percent %>%;
+		}
+
+		.circle2-<%= session.id %> {
+			height: <%= (100 / percent) * 100 %>%;
+		}
+	<% end %>
+</style>
+
+<script>
+console.log("RENDER SESSIONS");
+</script>
+<div class="container-fixed session-container">
+
+	<div class="session-header-div"><h2 class="session-header">Sessions</h2></div>
+	<div class="row session-row">
+		<div class="column-wrap">
+
+
+
+<% count = 0 %>
+<% first = true %>
+
+<!-- display new session button, and if it exists, the first session, double-column session display wrapper -->
+
+	<div class="col-md-6 session-splitter"><!-- start the session splitter, holds 2 sessions -->
+		<div class="col-sm-6 session-wrap"><!-- div to wrap sessions, for display/style purposes -->
+			<div id="new-ses-btn" class="new-session-button"><!-- display new session button in first session box -->
+				<button onclick="show_new_session()" class="btn btn-primary new-session-btn">+ New Session</button>
+			</div>
+		<%= render(:partial => "new_session", :task => @task) %><!--render new session partial, hidden until btn is clicked-->
+		</div>
+
+		<% if @task.sessions[0] %> <!-- if there are any sessions -->
+			<% session = @task.sessions[0] %> <!-- set session to the first session of the task -->
+
+			<!-- and display the first session inside 'session-splitter' with new session button -->
+			<div class="col-sm-6 session-wrap">
+				<div class="session-col">
+
+					<div class="session-title session-title-<%= session.task.name %>">
+						<%= session.task.name %> <br>
+					</div>
+
+					<div class="session-content"> <!-- SESSION CONTENT -->
+						<span class="session-text session-date session-date-<%= session.id %>"> <%= session.start.to_date %></span>
+						<span class="session-text session-id session-id-<%= session.id %>"> <%= session.id %></span>
+
+
+						<div class="circle circle-<%= session.id %>">
+							<div class="circle-cover circle-cover-<%= session.id %>">
+							<div class="circle2 circle2-<%= session.id %>">
+								
+							</div>
+							</div>
+
+
+							<span class="session-duration session-duration-<%=session.id %>"> <%= seconds_in_time(session.duration) %></span>
+						</div>
+
+
+						<span class="session-text session-time session-time-<%= session.id %>"> <%= session.start.strftime("%I:%M %P") %> - <%= session.end.strftime("%I:%M %P") %></span>
+
+						<span class="session-text session-links session-links-<%= session.id %>"> <%= link_to 'Edit' %> | <%= link_to 'Delete' %></span>
+
+						<div class="session-text session-note session-note-<%= session.id %>"> <%= session.note %> </div>
+					</div> 		<!-- SESSION CONTENT -->
+
+				</div> <!-- Session col -->
+			</div> <!-- Session Wrap (inner 6-col) -->
+
+
+		<% end %>
+
+	</div>
+
+
+<!-- drop(1) to skip over first element, because if it exists it will be displayed in the first 'session-splitter' along
+with the new task button. bootstrap won't display columns to responsively drop from 4 to 2 to 1 cols as screen size gets 
+smaller, so I had to implement my own solution and this is the one annoying side effect of that hack I need to work around -->
+<% @task.sessions.drop(1).each do |session| %> <!-- Display all session;  TODO: add show:this week/day/etc. and paginate -->
+	<% count = count + 1 %> 
+
+	<% if count == 1 then %>
+		
+			<div class="col-md-6 session-splitter">
+
+	<% end %>
+
+
+
+			<div class="col-sm-6 session-wrap">
+				<div class="session-col">
+
+					<div class="session-title session-title-<%= session.task.name %>">
+						<%= session.task.name %> <br>
+					</div>
+
+					<div class="session-content"> <!-- SESSION CONTENT -->
+						<span class="session-text session-date session-date-<%= session.id %>"> <%= session.start.to_date %></span>
+						<span class="session-text session-id session-id-<%= session.id %>"> <%= session.id %></span>
+
+
+						<div class="circle circle-<%= session.id %>">
+							<div class="circle-cover circle-cover-<%= session.id %>">
+							<div class="circle2 circle2-<%= session.id %>">
+								
+							</div>
+							</div>
+
+
+							<span class="session-duration session-duration-<%=session.id %>"> <%= seconds_in_time(session.duration) %></span>
+						</div>
+
+
+						<span class="session-text session-time session-time-<%= session.id %>"> <%= session.start.strftime("%I:%M %P") %> - <%= session.end.strftime("%I:%M %P") %></span>
+
+						<span class="session-text session-links session-links-<%= session.id %>"> <%= link_to 'Edit' %> | <%= link_to 'Delete' %></span>
+
+						<div class="session-text session-note session-note-<%= session.id %>"> <%= session.note %> </div>
+					</div> 		<!-- SESSION CONTENT -->
+
+				</div> <!-- Session col -->
+			</div> <!-- Session Wrap (inner 6-col) -->
+
+
+	<% if count == 2 then %>
+
+			</div> <!-- Session Splitter (outer 6-col) -->
+			<% count = 0 %>
+
+	<% end %>
+
+		<% end %>
+
+		</div> <!-- Session Col -->
+	</div><!-- Session Row -->
+</div><!-- Session container -->
+

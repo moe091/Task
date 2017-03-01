@@ -1,0 +1,37 @@
+<table>
+  <thead>
+    <tr>
+    	
+      <th><%= link_to "Name", :sort => "name"%></th>
+      <th><%= link_to "% Completed", :sort => "percentage"%></th>
+      <th><%= link_to "Work Left", :sort => "hours_until_goal"%></th>
+      <th><%= link_to "Goal", :sort => "goal" %></th>
+      <th><%= link_to "Ending in", :sort => "ending_in"%></th>
+      
+    </tr>
+  </thead>
+  
+  <tbody>
+	<% @tasks.each do |task| %>
+		<tr class="row-<%= task.id %>">
+
+			<td class="table-name table-name-<%= task.id %>"> <strong><%= link_to task.name, task %></strong> </td>
+			<td class="table-percent table-percent-<%= task.id %>"> 
+
+				<div class="percent-bar percent-bar-<%= task.id %>"></div>
+				<p class="percent-text percent-text-<%= task.id %>">
+					<b><%= task_percentage(task) %>%</b>
+				</p>
+			
+			</td>
+			<td class="table-completed table-completed-<%= task.id %>"><%= format_minutes(task.goal - task.completed) %> Hours</td>
+
+			<td class="table-goal table-goal-<%= task.id %>"> <%= format_minutes(task.goal) %> Hours </td>
+			<td class="table-timeleft table-timeleft-<%= task.id %>"> <%= ending(task) %> </td>
+
+		</tr>
+	<% end %>
+
+  </tbody>
+  
+</table>

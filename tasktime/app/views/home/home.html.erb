@@ -1,0 +1,60 @@
+<head>
+
+<%= stylesheet_link_tag    "home", :media => "all" %>
+
+<style type="text/css" rel="stylesheet">
+	<% if user_signed_in? %>
+		<%  @cur_user.tasks.each do |task| %>
+
+			.meter-bar-<%= task.id %> {
+				background-color: #2a2;
+				width: <%= task_percentage(task) %>%;
+				max-width: 100%;
+				border-radius: 3px;
+			}
+
+			.percent-bar-<%= task.id %> {
+				width: <%= task_percentage(task) %>%;
+				max-width: 100%;
+			}
+			
+
+		<% end %>
+
+	<% end %>
+</style>
+
+	
+</head>
+<body>
+
+
+<% if @cur_user %>
+<div class="header-div">
+
+	<h1 class="my-tasks"><%= @cur_user.username %>'s Tasks</h1>
+
+
+
+
+	<button class="btn btn-primary modal-button" data-remote="true" onclick="show_task_modal()">
+    	New Task
+  	</button>
+
+  <!-- Modal -->
+  	<div class="modal fade" id="new-task-modal" tabindex="-1" role="dialog" aria-labelledby="new-task-label" aria-hidden="true">
+	  
+	</div>
+
+</div>
+
+
+<br>
+<br>
+<div id="table-partial-div">
+	<%= render(:partial => "table") %>
+</div>
+
+<% end %>
+
+</body>
