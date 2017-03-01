@@ -32,6 +32,8 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.3)
     bcrypt (3.1.11)
+    bootstrap-datepicker-rails (1.6.4.1)
+      railties (>= 3.0)
     builder (3.0.4)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -63,6 +65,8 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
+    momentjs-rails (2.17.1)
+      railties (>= 3.1)
     multi_json (1.12.1)
     mysql2 (0.3.21)
     orm_adapter (0.5.0)
@@ -143,9 +147,11 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord-postgresql-adapter
+  bootstrap-datepicker-rails (>= 0.6.21)
   coffee-rails (~> 3.2.1)
   devise
   jquery-rails
+  momentjs-rails
   mysql2 (~> 0.3.10)
   pg (= 0.18.4)
   rails (= 3.2.16)
@@ -156,7 +162,7 @@ DEPENDENCIES
   uglifier (>= 1.0.3)
 
 RUBY VERSION
-   ruby 1.9.3p551
+   ruby 2.3.1p112
 
 BUNDLED WITH
-   1.13.2
+   1.13.6

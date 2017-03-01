@@ -16,7 +16,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', end
 	min-height: 500px;
 	float: left;
 	text-align: center;
+}
 
+.left-head h3 {
+	font-size: 20px;
+	line-height: 28px;
 }
 .right-head {
 	display: inline-block;

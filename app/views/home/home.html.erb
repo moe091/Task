@@ -5,9 +5,33 @@
 <%= stylesheet_link_tag		"task_list_style", :media => "all" %>
 <%= stylesheet_link_tag		"new_task_style", :media => "all" %>
 <% @task = Task.new %>
+<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen"
+     href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.45/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript"
+     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
+    </script>
 <link href="https://fonts.googleapis.com/css?family=PT+Serif|Roboto+Slab" rel="stylesheet">
 
+<!--
+<% @task = Task.new %>
+<link href="https://fonts.googleapis.com/css?family=PT+Serif|Roboto+Slab" rel="stylesheet">
+<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen"
+     href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.45/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript"
+     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
+    </script>
+
+    <%= stylesheet_link_tag    "home", :media => "all" %>
+<%= stylesheet_link_tag		"task_list_style", :media => "all" %>
+<%= stylesheet_link_tag		"new_task_style", :media => "all" %>
+
+-->
 <style type="text/css" rel="stylesheet">
+
 	<% if user_signed_in? %>
 		<%  @cur_user.tasks.each do |task| %>
 			<% if (task.goal == 0) %>
@@ -75,17 +99,39 @@
 
 					<div class="create-task-timing-div">
 						<%= f.label "Timed" do %>
-							<span id="is-timed-span">Timed: </span> <%= f.check_box :timed, onclick: "timed_clicked()" %>
+							<span id="is-timed-span">Timed?: </span> <%= f.check_box :timed, onclick: "timed_clicked()" %>
 						<% end %>
-						<br />
 						<%= f.label "Goal" do %>
-							<span id="has-goal-span">Has Goal: </span> <%= f.check_box :has_goal, onclick: "goal_clicked()" %>
+							<span id="has-goal-span">Goal?: </span> <%= f.check_box :has_goal, onclick: "goal_clicked()" %>
 						<% end %>
 						<div class="create-task-goal-div">
-						<%= f.label "Time" do %>
-							Hours: <%= f.text_field :hours, size: "4" %> Minutes <%= f.text_field :minutes, size: "4" %>
-						<% end %>
+							<%= f.label "Time" do %>
+								Hours: <%= f.text_field :hours, size: "4" %> Minutes <%= f.text_field :minutes, size: "4" %>
+							<% end %>
 						</div>
+						<br />
+						<%= f.label "due_date", class: "due-date-label" do %>
+							<span id="has-due-date-span">Due Date?: </span> <%= f.check_box :has_due_date, onclick: "due_date_clicked()" %>
+						<% end %>
+
+						
+						<div id="datetimepicker" class="input-append">
+						    <input id="date-field" data-format="MM/dd/yyyy HH:mm:ss PP" type="text"></input>
+						    <span class="add-on" id="datebtn-back">
+						      	<i data-time-icon="icon-time" data-date-icon="icon-calendar">
+						     	</i>
+						    </span>
+						</div>
+
+						<script type="text/javascript">
+						  	$(function() {
+						    	$('#datetimepicker').datetimepicker({
+						      		maskInput: true,
+						      		language: 'en',
+						      		pick12HourFormat: true
+						    	});
+						  	});
+						</script>  
 					</div>
 
 				<% end %>

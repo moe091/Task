@@ -4,6 +4,9 @@
 	font-family: 'Roboto Slab', serif;
 }
 
+.create-task-div hr {
+	width: 80%;
+}
 .new-task-form {
 	width: 60%;
 	margin: 0 auto;
@@ -11,25 +14,37 @@
 }
 
 .new-task-form label {
-	font-size: 1.6em;
+	font-size: 1.2em;
 	vertical-align: text-bottom;
 	line-height: 34px;
+	display: inline-block;
+	margin: 0 auto;
 }
 .new-task-form input, .new-task-form textarea {
 	float: right;
-	font-size: 1em;
+	font-size: 0.9em;
 	height: 30px;
+	line-height: 1.5em;
 }
 
+.new-task-form textarea {
+	height: 4em;
+}
 .create-task-timing-div {
 	clear: right;
 	padding: 10px;
-	border: 1px black solid;
-	text-align: center;
 	line-height: 1em;
 }
 
-#task_timed, #task_has_goal {
+.create-task-timing-div label {
+	margin: 3px 20px;
+}
+
+#task_hours, #task_minutes {
+	width: 2em;
+}
+
+#task_timed, #task_has_goal, #task_has_due_date {
 	height: 26px;
 	margin-left: 30px;
 }
@@ -39,6 +54,7 @@
 }
 
 .create-task-goal-div {
+	margin-top: 8px;
 	display: none;
 }
 
@@ -46,3 +62,25 @@
 	float: none;
 }
 
+.due-date-label {
+	display: block;
+	text-align: center;
+}
+
+
+
+
+#datebtn-back {
+	 height: 25px !important; 
+}
+
+#datetimepicker {
+	display: none;
+	padding: 4px;
+	padding-left: 20px;
+}
+
+#date-field {
+	float: none !important; 
+	height: 25px !important;
+}

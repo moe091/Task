@@ -23,6 +23,34 @@ function timed_clicked() {
 	}
 }
 
+function due_date_clicked() {
+	if ($("#task_has_due_date").is(":checked")) {
+		console.log('checked');
+		$("#datetimepicker").show();
+	} else {
+		console.log('unckecked');
+		$("#datetimepicker").hide();
+	}
+}
+
+function getDate() {
+	var date = $("#datetimepicker").data("datetimepicker").getLocalDate();
+
+	console.log(date.getTime());
+	return date.getTime();
+}
+
+function pickDate() {
+	console.log("PICK");
+	$(function() {
+		$('#datetimepicker').datetimepicker({
+	  		maskInput: true,
+	  		language: 'en',
+	  		pick12HourFormat: true
+		});
+	});
+}
+
 
 
 //_____________TIMER___________\\
