@@ -4,10 +4,10 @@
 <%= stylesheet_link_tag		"task_list_style", :media => "all" %>
 <%= stylesheet_link_tag		"new_task_style", :media => "all" %>
 <% @task = Task.new %>
-<link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" media="screen" href="https://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
+<%= stylesheet_link_tag "bootstrap-combined.min", :media => "all" %>
+<%= stylesheet_link_tag "bootstrap-datetimepicker.min", :media => "all" %>
 
-<script type="text/javascript" src="https://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js"></script>
+<%= javascript_include_tag "bootstrap-datetimepicker.min" %>
 
 <link href="https://fonts.googleapis.com/css?family=PT+Serif|Roboto+Slab" rel="stylesheet">
 

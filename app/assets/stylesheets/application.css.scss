@@ -10,11 +10,14 @@
  *
  *= require_self
  *= require_tree .
- *= require bootstrap-datepicker
+ *= require bootstrap-datetimepicker
   *= require bootstrap.min
   *= require bootstrap.min.css
  */
   
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'bootstrap-datetimepicker';
 
 .devise-bar {
 	margin: 0 10px;

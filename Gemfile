@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 ruby '2.3.1'
 gem 'rails', '3.2.16'  
 gem 'momentjs-rails'
-gem 'bootstrap-datepicker-rails', '>= 0.6.21'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development do 
@@ -28,7 +27,7 @@ group :assets do
 end
 gem 'sass-rails', '~> 3.2.6'
 gem 'sass', '~> 3.2.0'
-
+gem 'bootstrap-sass'
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
