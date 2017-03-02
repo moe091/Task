@@ -1,17 +1,14 @@
 <head>
 
-<%= stylesheet_link_tag    "home", :media => "all" %>
 <%= stylesheet_link_tag    "new-task-modal", :media => "all" %>
 <%= stylesheet_link_tag		"task_list_style", :media => "all" %>
 <%= stylesheet_link_tag		"new_task_style", :media => "all" %>
-<%= stylesheet_link_tag "bootstrap-datetimepicker", :media => "all" %>
 <% @task = Task.new %>
-<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+<link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" media="screen" href="https://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.45/js/bootstrap-datetimepicker.min.js"></script>
-    <script type="text/javascript"
-     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
-    </script>
+<script type="text/javascript" src="https://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js"></script>
+
 <link href="https://fonts.googleapis.com/css?family=PT+Serif|Roboto+Slab" rel="stylesheet">
 
 <!--
@@ -131,6 +128,7 @@
 						      		pick12HourFormat: true
 						    	});
 						  	});
+						  	$("#datetimepicker").datetimepicker("hide");
 						</script>
 
 

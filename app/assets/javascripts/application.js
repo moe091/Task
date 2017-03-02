@@ -15,4 +15,4 @@
 //= require_tree .
 //= require bootstrap.min
 //= require moment
-//= require bootstrap-datepicker
+//= require bootstrap-datetimepicker.min

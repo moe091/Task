@@ -1,0 +1,17 @@
+---
+crumble-bg.jpg: crumble-bg.jpg
+crumble-bg/index.jpg: crumble-bg.jpg
+rails.png: rails.png
+rails/index.png: rails.png
+application.js: application.js
+application/index.js: application.js
+bootstrap.as: bootstrap.as
+bootstrap/index.as: bootstrap.as
+application.css: application.css
+application/index.css: application.css
+javascripts/bootstrap.as: javascripts/bootstrap.as
+javascripts/bootstrap/index.as: javascripts/bootstrap.as
+javascripts/bootstrap.min.as: javascripts/bootstrap.min.as
+javascripts/bootstrap/index.min.as: javascripts/bootstrap.min.as
+jquery.min.map: jquery.min.map
+jquery/index.min.map: jquery.min.map
