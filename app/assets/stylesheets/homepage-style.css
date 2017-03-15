@@ -2,7 +2,7 @@
 		padding: 0 !important;
 	}
 	.head {
-		width: 1000px;
+		width: 1200px;
 		margin: 0 auto;
 		text-align: center;
 	}
@@ -10,9 +10,9 @@
 		text-align: center;
 	}
 	.left-head, .right-head {
-		width: 460px;
+		width: 540px;
 		height: 500px;
-		margin: 20px;
+		margin: 10px;
 	}
 
 	.navbar {
@@ -44,7 +44,7 @@
 		border-radius: 16px;
 		border: 8px #69BBFA solid;
 		margin: 0 auto;
-		width: 440px;
+		width: 520px;
 		height: 450px;
 
 		margin-top: 80px;
@@ -63,7 +63,7 @@
 		padding: 10px 6px 6px 6px;
 	}
 	.create-task-div {
-		width: 320px;
+		width: 350px;
 	}
 	.left-head h3 {
 		font-size: 12px;
