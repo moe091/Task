@@ -45,8 +45,6 @@ class TasksController < ApplicationController
       @task.name = params[:name]
       @task.goal = params[:goal]
       @task.completed = 0
-      if (!params[:isTimed])
-        @task.completed = -1
       @task.timed = params[:isTimed]
       @task.recurring = false
       puts params[:end_date]
