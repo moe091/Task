@@ -1,5 +1,6 @@
 //_____________FORM____________\\
 function submit_new_task(user_id) {
+	//Adding a comment so I can commit this file
 	console.log("SUBMIT NEW TASK");
 	console.log($("#task_name").data("user-id"));
 	console.log("NAME:" + $("#task_name").val());
