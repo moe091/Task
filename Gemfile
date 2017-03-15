@@ -4,6 +4,8 @@ ruby '2.3.1'
 gem 'rails', '3.2.16'  
 gem 'momentjs-rails'
 gem 'test-unit'
+	gem 'pg', '0.18.4'
+gem 'activerecord-postgresql-adapter'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development do 
@@ -11,9 +13,7 @@ group :development do
 end
 
 group :production do
-	gem 'pg', '0.18.4'
 	gem 'thin'
-	gem 'activerecord-postgresql-adapter'
 end
 # Gems used only for assets and not required
 # in production environments by default.

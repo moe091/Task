@@ -37,6 +37,6 @@ production:
   reconnect: false
   database: tasktime_production
   pool: 5
-  username: root
-  password:
+  username: moe091
+  password: 10mojo17
   socket: /var/run/mysqld/mysqld.sock
