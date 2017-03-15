@@ -34,6 +34,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    puts "\n\n\n\n\nSESSIONDESTROY\n\n\n\n\n\n"
     @session.destroy
     respond_with(@session)
   end

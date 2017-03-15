@@ -1,4 +1,31 @@
 //_____________FORM____________\\
+function submit_new_task(user_id) {
+	console.log("SUBMIT NEW TASK");
+	console.log($("#task_name").data("user-id"));
+	console.log("NAME:" + $("#task_name").val());
+	console.log("DESCRIPTION: " + $("#task_description").val());
+	console.log("GOAL: " + (parseInt($("#task_hours").val()) * 60 + parseInt($("#task_minutes").val())));
+	console.log(getDate());
+	var description = $("#task_description").val();
+	var name = $("#task_name").val();
+	var has_goal = $("#task_has_goal").is(":checked");
+	var goalMins = parseInt($("#task_hours").val()) * 60 + parseInt($("#task_minutes").val()) * 60;
+	var end_date = getDate();
+	var hasDueDate = $("#task_has_due_date").is(":checked");
+	var isTimed = $("#task_timed").is(":checked");
+	var hasGoal = $("#task_has_goal").is(":checked");
+	$.ajax({
+	  type: "POST",
+	  url: "/tasks",
+	  datatype: "json",
+	  data: {name: name, description: description, goal: goalMins, isTimed: isTimed, end_date: end_date, hasDueDate: hasDueDate, hasGoal: hasGoal, user_id: user_id },
+	  success: function(data) {
+	  	console.log("SUCCESS");
+	  	console.log(data);
+	  }
+	}); 
+	
+}
 function goal_clicked() {
 	console.log("goal-clicked");
 	if ($("#task_has_goal").is(":checked")) {
@@ -30,6 +57,7 @@ function due_date_clicked() {
 	} else {
 		console.log('unckecked');
 		$("#datetimepicker").hide();
+		getDate();
 	}
 }
 
@@ -37,7 +65,7 @@ function getDate() {
 	var date = $("#datetimepicker").data("datetimepicker").getLocalDate();
 
 	console.log(date.getTime());
-	return date.getTime();
+	return date.getTime() / 1000;
 }
 
 function pickDate() {

@@ -33,13 +33,37 @@ class TasksController < ApplicationController
   def create
     puts "\n\n\n\n\n\n\n\n"
     puts params
+    puts "CREATE"
+    puts params[:user_id]
     puts "\n\n\n\n\n\n\n\n"
+    puts params
+    if (params[:user_id] != nil)
+      puts "here, cur user:"
+      puts current_user
+      @task = Task.new
+      @task.description = params[:description]
+      @task.name = params[:name]
+      @task.goal = params[:goal]
+      @task.completed = 0
+      @task.timed = params[:isTimed]
+      @task.recurring = false
+      puts params[:end_date]
+      @task.end_date = DateTime.parse(Time.at(params[:end_date].to_f).to_s)
+      @task.start_date = DateTime.now
+      @task.user_id = current_user.id
+      @task.save!
+      User.find(params[:user_id]).tasks << @task
 
-    @task = create_task(params[:task])
-    current_user.tasks << @task
+      @tasks = current_user.tasks
+    else 
+      @task = nil;
+    end
+    puts "\n\nTask: "
+    puts @task
+    respond_to do |format|
+      format.js
+    end
 
-    @tasks = current_user.tasks
-    render :layout => false
   end
 
   def update
@@ -86,7 +110,7 @@ class TasksController < ApplicationController
 
 
 
-    def create_task(params) 
+    def create_task
       t = Task.new
       t.completed = 0
       t.name = params[:name]

@@ -20,7 +20,11 @@ module HomeHelper
 
 	def task_percentage(task)
 		if (task.goal && task.goal > 0)
-			return ((task.completed.to_f / task.goal) * 100).to_i
+			percent = ((task.completed.to_f / task.goal) * 100).to_i
+			if percent > 100
+				percent = 100
+			end
+			return percent
 		else 
 			return "N/A"
 		end

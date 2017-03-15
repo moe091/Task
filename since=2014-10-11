@@ -1,0 +1,270 @@
+[33mcommit ca2e0e189e4ab5567a05adfe1d7136f6220e0d54[m
+Author: moe091 <moe091@gmail.com>
+Date:   Wed Mar 1 21:18:04 2017 -0500
+
+    removed http imports
+
+[33mcommit c916fbe85dc331f44849ea8d21b1fc71040ca63e[m
+Author: moe091 <moe091@gmail.com>
+Date:   Wed Mar 1 20:28:08 2017 -0500
+
+    Changed cdns to https to fix heroku error
+
+[33mcommit e95c7b18c80fa3c615f1969b51d84532eff45288[m
+Author: moe091 <moe091@gmail.com>
+Date:   Wed Mar 1 18:23:35 2017 -0500
+
+    Add datetimepicker locally
+
+[33mcommit 0111b1958d7538030c018bb03a759617cce13fbf[m
+Author: moe091 <moe091@gmail.com>
+Date:   Wed Mar 1 18:11:13 2017 -0500
+
+    fix datetimebutton
+
+[33mcommit f46c515969e46b7e2509800040be837a9ba2c29c[m
+Author: moe091 <moe091@gmail.com>
+Date:   Wed Mar 1 18:07:45 2017 -0500
+
+    Fixed layout
+
+[33mcommit 5294b62d98068f6efd28d891b6fc01b63c8f173f[m
+Author: moe091 <moe091@gmail.com>
+Date:   Wed Mar 1 17:49:23 2017 -0500
+
+    fixed task.rb
+
+[33mcommit df4b19cfe377987dcf2ae74427584323aec6f6bc[m
+Author: moe091 <moe091@gmail.com>
+Date:   Wed Mar 1 17:47:36 2017 -0500
+
+    fixed home.html
+
+[33mcommit 29119bac34e0ef42d4c863ef7a6ba485d4886636[m
+Author: moe091 <moe091@gmail.com>
+Date:   Wed Mar 1 17:43:00 2017 -0500
+
+    fixed task_list_style.css
+
+[33mcommit c69dcb168b3dba13dc5b33c83b369289b2e91b06[m
+Author: moe091 <moe091@gmail.com>
+Date:   Wed Mar 1 17:38:48 2017 -0500
+
+    update heroku
+
+[33mcommit 9527701ceec39e10551f299d88849be4101d63ff[m
+Merge: 3fba879 5b81502
+Author: moe091 <moe091@gmail.com>
+Date:   Wed Mar 1 17:36:20 2017 -0500
+
+    Merge branch 'master' of https://git.heroku.com/mo-task
+
+[33mcommit 3fba8795e969e5b7f275267cc68dd84d07c73f9f[m
+Author: moe091 <moe091@gmail.com>
+Date:   Wed Mar 1 17:33:37 2017 -0500
+
+    update heroku
+
+[33mcommit fbd0254cc4ddadd3d301579e40028179537beb7d[m
+Author: moe091 <moe091@gmail.com>
+Date:   Wed Mar 1 17:15:04 2017 -0500
+
+    switch ruby version, set up for heroku deploy
+
+[33mcommit 7a08e599c6854e784d9e7b69a2259a2df8844826[m
+Author: moe091 <moe091@gmail.com>
+Date:   Sun Feb 26 14:11:03 2017 -0500
+
+    Totally redesigned app, reprogrammed most of the functionality.
+
+[33mcommit 9c4b809adb207aba7cb2f8890029091e04fd4d87[m
+Author: moe091 <moe091@gmail.com>
+Date:   Fri Feb 17 14:48:17 2017 -0500
+
+    Started working on new layout
+
+[33mcommit 3b67de0606d1a9ee7b4403a11ca2b3ad9a176b4d[m
+Author: Moe <moe091@gmail.com>
+Date:   Fri Jul 22 23:27:52 2016 -0400
+
+    more heroku config
+
+[33mcommit 7124c554867e1ae0711c4790ea8c1dcfee8294ee[m
+Author: Moe <moe091@gmail.com>
+Date:   Fri Jul 22 23:20:57 2016 -0400
+
+    set up for heroku deployment to test production
+
+[33mcommit f65cc2544da1fb50fdbe35c7551714e4f7f2b643[m
+Author: Moe <moe091@gmail.com>
+Date:   Fri Jul 22 23:09:07 2016 -0400
+
+    Changed 'New Task' modal to have multiple steps and made it more user-friendly. removed unused links
+
+[33mcommit ac6c018695fc3d01d0998f652414bc21c98c8af2[m
+Author: Moe <moe091@gmail.com>
+Date:   Sat Jul 16 18:53:01 2016 -0400
+
+    Updated new task form, fixed some links, slight ui changes
+
+[33mcommit fa51098b4967ba0f99e29cf8e976034cf3efa02a[m
+Author: Moe <moe091@gmail.com>
+Date:   Mon Jul 11 22:10:54 2016 -0400
+
+    Fixed navbar on phones and smaller screens
+
+[33mcommit b962d15eadb92b78d220eaf1eb48efcaf252b551[m
+Author: Moe <moe091@gmail.com>
+Date:   Mon Jul 11 20:27:55 2016 -0400
+
+    set initial length of percent bar to 0% instead of 30
+
+[33mcommit a79492523a554ceb06db01fa3e5908a66d41ec47[m
+Author: Moe <moe091@gmail.com>
+Date:   Mon Jul 11 20:21:54 2016 -0400
+
+    precompile assets in production
+
+[33mcommit e1e94eff43c848107676de21f856c063a8b93946[m
+Author: Moe <moe091@gmail.com>
+Date:   Mon Jul 11 20:04:53 2016 -0400
+
+    bootstrap
+
+[33mcommit dab2639915a6b5207330ef25b8f6d5172fe00506[m
+Author: Moe <moe091@gmail.com>
+Date:   Mon Jul 11 20:01:55 2016 -0400
+
+    sass gem
+
+[33mcommit 73a9aaafacfa0d65e58cccbd22df6bd66efd9676[m
+Author: Moe <moe091@gmail.com>
+Date:   Mon Jul 11 20:00:50 2016 -0400
+
+    sass gem added
+
+[33mcommit 71c3dc443e729aeff25115602f24da5859be271b[m
+Author: Moe <moe091@gmail.com>
+Date:   Mon Jul 11 19:55:55 2016 -0400
+
+    fixed bootstrap link
+
+[33mcommit 57414067e2fc0c0e610958868c4693684dbeab26[m
+Author: Moe <moe091@gmail.com>
+Date:   Mon Jul 11 19:51:44 2016 -0400
+
+    lks
+
+[33mcommit bdb001ab1a577a3a3d05283294034cbf721815f7[m
+Author: Moe <moe091@gmail.com>
+Date:   Mon Jul 11 19:50:32 2016 -0400
+
+    postegres heroku
+
+[33mcommit 9d20677a46310b7e25362900193234a279a9991e[m
+Author: Moe <moe091@gmail.com>
+Date:   Mon Jul 11 19:47:45 2016 -0400
+
+    added postgresql activerecord adapter for heroku
+
+[33mcommit 18a0768c281189f0d81159caafb2ffdef4f83afd[m
+Author: Moe <moe091@gmail.com>
+Date:   Mon Jul 11 19:45:23 2016 -0400
+
+    switched to postgres for heroku
+
+[33mcommit ace98b989352cb5ee53f3f845c4787dbefe7e0dd[m
+Author: Moe <moe091@gmail.com>
+Date:   Mon Jul 11 19:25:45 2016 -0400
+
+    Initial commit
+
+[33mcommit 5b81502d6b2e007ba7167a7b70fad6f74d826e46[m
+Author: moe091 <moe091@gmail.com>
+Date:   Sat Jul 9 01:01:22 2016 -0400
+
+    Precompile assets
+
+[33mcommit 4cb7a6942f7b083a4ac9ff5d917e0ecbb7cf852e[m
+Author: moe091 <moe091@gmail.com>
+Date:   Sat Jul 9 00:57:39 2016 -0400
+
+    Precompile assets
+
+[33mcommit c0d942ab46cb76ea3ba7804d75ff33b64e5e580f[m
+Author: moe091 <moe091@gmail.com>
+Date:   Fri Jul 8 22:26:23 2016 -0400
+
+    status
+
+[33mcommit 0e62e934687f796ad0dd29fbd3cf2c7da872d80b[m
+Author: moe091 <moe091@gmail.com>
+Date:   Thu Jul 7 23:26:53 2016 -0400
+
+    finished 'New Task' modal and made it fully ajax/asynchronous. fixed session layout for tasks with 1 or 0 sessions. small changes/fixes
+
+[33mcommit 4e4bab0d96bc18bd4769ec39e0a0ef3941b0f973[m
+Author: moe091 <moe091@gmail.com>
+Date:   Thu Jul 7 00:40:58 2016 -0400
+
+    Added new task functionality. Created modal to create new tasks via ajax on home/tasks pages.etc.
+
+[33mcommit e0f9315fc8be084f0eea0c4b8e5f5e2d3e32024e[m
+Author: moe091 <moe091@gmail.com>
+Date:   Tue Jul 5 01:08:03 2016 -0400
+
+    added animations, design changes, fix session/task timing functionality, fixed ajax bug on save_session, etc
+
+[33mcommit 4a11cc41a973cf192f920d9ee64def3c161efc70[m
+Author: moe091 <moe091@gmail.com>
+Date:   Sun Jul 3 00:40:51 2016 -0400
+
+    Making progress
+
+[33mcommit aa677c7e28c920ccd6ca46b55a402cd9dfcba9a5[m
+Author: moe091 <moe091@gmail.com>
+Date:   Fri Jul 1 00:16:44 2016 -0400
+
+    Finish adding time tracking for sessions with ajax
+
+[33mcommit 239bcffa25155e6361dc10ca130c6256abd9965f[m
+Author: moe091 <moe091@gmail.com>
+Date:   Wed Jun 29 03:58:33 2016 -0400
+
+    Added new session functionality, started adding ajax functionality, updated task page style, etc
+
+[33mcommit 4be06a340f7bbc7a587e1ca8b7e56ba9e53682fd[m
+Author: moe091 <moe091@gmail.com>
+Date:   Mon Jun 27 13:59:56 2016 -0400
+
+    Design Task page layout and create sessions
+
+[33mcommit 1a8e5ca8de3840fbcd60dc2aa476fd2af057ad2b[m
+Author: moe091 <moe091@gmail.com>
+Date:   Sun Jun 26 20:04:23 2016 -0400
+
+    Created Task show page, session model
+
+[33mcommit c66031fedc30b02b799373a6dc70450a6819682e[m
+Author: moe091 <moe091@gmail.com>
+Date:   Sun Jun 26 15:26:57 2016 -0400
+
+    periodic commit, added sorting, put task table in partial, helper methods, etc
+
+[33mcommit 0c33ef47751164f9eb7bc5e2cbc7c17253529f20[m
+Author: moe091 <moe091@gmail.com>
+Date:   Mon Jun 20 21:11:50 2016 -0400
+
+    changed layout to table-based layout
+
+[33mcommit 4b9701425c8ca1966f8b9d755e80e8c937af86c1[m
+Author: moe091 <moe091@gmail.com>
+Date:   Wed Jun 15 22:58:23 2016 -0400
+
+    Created Home/Task view, added timing to task model, js script for timers, major layout/view updates
+
+[33mcommit 4768ded6580dc367a5b329dd1e3349f3a773deaf[m
+Author: moe091 <moe091@gmail.com>
+Date:   Thu Jun 9 15:59:04 2016 -0400
+
+    Add Devise, Create Tasks, basic views

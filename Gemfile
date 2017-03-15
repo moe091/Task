@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.3.1'
 gem 'rails', '3.2.16'  
 gem 'momentjs-rails'
+gem 'test-unit'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development do 

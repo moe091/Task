@@ -10674,164 +10674,208 @@ body {
 
 
 **/
-header {
-	margin: 0 auto;
-	padding: 40px 30px 30px 30px;
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,2989d8+50,207cca+51,7db9e8+100;Blue+Gloss+Default */
-background: #1e5799; /* Old browsers */
-background: -moz-linear-gradient(top,  #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
-	color: #fff;
-}
-.left-head {
-	padding-top: 5%;
-	display: inline-block;
-	width: 45%;
-	min-height: 500px;
-	float: left;
-	text-align: center;
-}
+	body {
+		padding: 0 !important;
+	}
+	.col-lg-6 {
+		text-align: center;
+	}
+	.navbar {
+		width: 100% !important;
+	}
+	header {
+		margin: 0 auto;
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,2989d8+50,207cca+51,7db9e8+100;Blue+Gloss+Default */
+		background: #1e5799; /* Old browsers */
+		background: -moz-linear-gradient(top,  #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+		color: #fff;
+	}
+	.left-head {
+		padding-top: 5%;
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+	}
+	.right-head {
+		display: inline-block;
+		text-align: center;
+		margin: 0 auto;
+	}
+	.create-task-div {
+		background-color: #D4E6FC;
+		border-radius: 16px;
+		border: 8px #69BBFA solid;
+		margin: 0 auto;
+		width: 80%;
+		min-width: 440px;
+		max-width: 700px;
+		height: 450px;
+	}
 
-.left-head h3 {
-	font-size: 20px;
-	line-height: 28px;
-}
-.right-head {
-	display: inline-block;
-	width: 55%;
-	min-height: 500px;
-	float: right;
-	padding: 50px;
-}
-
-.create-task-div {
-	background-color: #D4E6FC;
-	border-radius: 16px;
-	border: 8px #69BBFA solid;
-	margin: 0 auto;
-	width: 700px;
-	height: 450px;
-}
-
-.task-name {
-	font-family: 'Roboto Slab', serif;
-	font-size: 1.8em;
-	background-color: #273952;
-	color: #eee;
-	min-height: 2em;
-	padding: 2px 3px 2px 3px;
-	display: block;
-}
-
-
-.task-div {
-	position: relative;
-}
-
-.percent-back {
-	display: -webkit-flex;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	box-sizing: content-box;
-	margin: 0 auto;
-	width: 250px;
-	height: 30px;
-	background-color: #444;
-	border: 3px black solid;
-	position: relative;
-	z-index: 0;
-}
-
-.percent-front {
-	display: -webkit-flex;
-	display: flex;
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	width: 50%;
-	background-color: #30b92a;
-	z-index: 1;
-}
-
-.percentage-text {
-	font-size: 1.5em;
-	font-weight: 700;
-	color: #f4f4f4;
-	position: relative;
-	z-index: 10;
-	display: flex;
-	align-items: center;
-}
-
-.percentage-details {
-	margin: 0 auto;
-	width: 250px;
-	height: 40px;
-	font-weight: 700;
-	color: #606060;
-	line-height: 1.5em;
-}
-
-.completed-detail {
-	float: left;
-
-}
-
-.goal-detail {
-	float: right;
-}
-
-.nogoal-elapsed-detail {
-	font-size: 1.3em;
-	font-style: italic;
-	margin: 0 auto;
-}
-
-.details {
-	margin: 0 auto;
-	width: 280px;
-	height: 60px;
-	border: 1px black solid;
-	background-color: #fff;
-}
-
-.nogoal-details .completed-detail {
-	padding-left: 3px;
-	font-weight: 700;
-}
-
-.nogoal-details .goal-detail {
-	padding-right: 3px;
-	font-weight: 700;
-	font-size: 1em;
-}
-
-.untimed-details {
-	height: 35px;
-}
+	.picker-switch {
+		border: 1px #dadada solid;
+		border-bottom: 3px #aaa solid;
+		border-right: 3px #aaa solid;
+	}
+@media (max-device-width:1024px)  {
+	header {
+		padding: 10px 6px 6px 6px;
+	}
+	.create-task-div {
+		width: 320px;
+	}
+		.left-head h3 {
+		font-size: 12px;
+		line-height: 15px;
+	}
 
 
-.untimed-details .time-left {
-	font-size: 1.3em;
-}
-
-.untimed-nodate-details {
-	height: 35px;
-	font-size: 1.3em;
-}
+}	
+@media (min-device-width: 1025px) {
 
 
-.start-date {
-	position: absolute;
-	bottom: 0;
-	left: 5px;
-	font-size: 1.1em;
-	line-height: 1.4em;
-}
+	header {
+		margin: 0 auto;
+		padding: 40px 30px 30px 30px;
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,2989d8+50,207cca+51,7db9e8+100;Blue+Gloss+Default */
+	background: #1e5799; /* Old browsers */
+	background: -moz-linear-gradient(top,  #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+		color: #fff;
+	}
+
+
+	.left-head h3 {
+		font-size: 20px;
+		line-height: 28px;
+	}
+
+	.right-head {
+		width: 80%;
+	}
+
+	.task-name {
+		font-family: 'Roboto Slab', serif;
+		font-size: 1.8em;
+		background-color: #273952;
+		color: #eee;
+		min-height: 2em;
+		padding: 2px 3px 2px 3px;
+		display: block;
+	}
+
+
+	.task-div {
+		position: relative;
+	}
+
+	.percent-back {
+		display: -webkit-flex;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		box-sizing: content-box;
+		margin: 0 auto;
+		width: 250px;
+		height: 30px;
+		background-color: #444;
+		border: 3px black solid;
+		position: relative;
+		z-index: 0;
+	}
+
+	.percent-front {
+		display: -webkit-flex;
+		display: flex;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 50%;
+		background-color: #30b92a;
+		z-index: 1;
+	}
+
+	.percentage-text {
+		font-size: 1.5em;
+		font-weight: 700;
+		color: #f4f4f4;
+		position: relative;
+		z-index: 10;
+		display: flex;
+		align-items: center;
+	}
+
+	.percentage-details {
+		margin: 0 auto;
+		width: 250px;
+		height: 40px;
+		font-weight: 700;
+		color: #606060;
+		line-height: 1.5em;
+	}
+
+	.completed-detail {
+		float: left;
+
+	}
+
+	.goal-detail {
+		float: right;
+	}
+
+	.nogoal-elapsed-detail {
+		font-size: 1.3em;
+		font-style: italic;
+		margin: 0 auto;
+	}
+
+	.details {
+		margin: 0 auto;
+		width: 280px;
+		height: 60px;
+		border: 1px black solid;
+		background-color: #fff;
+	}
+
+	.nogoal-details .completed-detail {
+		padding-left: 3px;
+		font-weight: 700;
+	}
+
+	.nogoal-details .goal-detail {
+		padding-right: 3px;
+		font-weight: 700;
+		font-size: 1em;
+	}
+
+	.untimed-details {
+		height: 35px;
+	}
+
+
+	.untimed-details .time-left {
+		font-size: 1.3em;
+	}
+
+	.untimed-nodate-details {
+		height: 35px;
+		font-size: 1.3em;
+	}
+
+
+	.start-date {
+		position: absolute;
+		bottom: 0;
+		left: 5px;
+		font-size: 1.1em;
+		line-height: 1.4em;
+	}
 
 
 
@@ -10839,15 +10883,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', end
 
 
 
-.task-buttons {
-	position: absolute;
-	bottom: 5px;
-	right: 5px;
-}
+	.task-buttons {
+		position: absolute;
+		bottom: 5px;
+		right: 5px;
+	}
 
 
-.center {
-	margin: 0 auto;
+	.center {
+		margin: 0 auto;
+	}
 }
 /* line 1, ../../app/assets/stylesheets/new-task-modal.css.scss */
 .toggle-check {
@@ -10949,110 +10994,126 @@ textarea {
   height: 1.8em;
   text-align: right;
 }
-.create-task-div {
-	position: relative;
-}
-.create-task-div h1 {
-	text-align: center;
-	color: #000;
-	font-family: 'Roboto Slab', serif;
-}
-
-.create-task-div hr {
-	width: 80%;
-}
-.new-task-form {
-	width: 60%;
-	margin: 0 auto;
-	color: #000;
-}
-
-.new-task-form label {
-	font-size: 1.2em;
-	vertical-align: text-bottom;
-	line-height: 34px;
-	display: inline-block;
-	margin: 0 auto;
-}
-.new-task-form input, .new-task-form textarea {
-	float: right;
-	font-size: 0.9em;
-	height: 30px;
-	line-height: 1.5em;
-}
-
-.new-task-form textarea {
-	height: 4em;
-}
-.create-task-timing-div {
-	clear: right;
-	padding: 10px;
-	line-height: 1em;
-	text-align: center;
-	background-color: #eaf4fd;
-}
-
-.create-task-timing-div label {
-	margin: 3px 20px;
-}
-
-.time-inputs {
-	text-align: center;
-}
-#task_hours, #task_minutes {
-	display: inline-block;
-	float: none;
-	width: 2em;
-}
-
-#task_timed, #task_has_goal, #task_has_due_date {
-	height: 26px;
-	margin-left: 30px;
-}
-
-#task_has_goal, #has-goal-span {
-	display: none;
-}
-
-.create-task-goal-div {
-	margin-top: 8px;
-	display: none;
-}
-
-.create-task-goal-div input {
-	float: none;
-}
-
-.due-date-label {
-	display: block;
-	text-align: center;
-}
+@media (max-device-width:1024px)  {
 
 
-.add-on {
-	height: 25px !important;
-	width: 25px !important;
-}
-#datebtn-back {
-	 height: 25px !important; 
-	 width: 25px !important;
-}
+}	
+@media (min-device-width: 1025px) {
 
-#datetimepicker {
-	display: none;
-	padding: 4px;
-	padding-left: 20px;
-}
+	.create-task-div {
+		position: relative;
+	}
+	.create-task-div h1 {
+		text-align: center;
+		color: #000;
+		font-family: 'Roboto Slab', serif;
+	}
 
-#date-field {
-	float: none !important; 
-	height: 25px !important;
-}
+	.create-task-div hr {
+		width: 80%;
+	}
+	.new-task-form {
+		width: 80%;
+		margin: 0 auto;
+		color: #000;
+	}
 
-.new-task-submit {
-	position: absolute;
-	bottom: 10px;
-	right: 10px;
+	.new-task-form label {
+		font-size: 1.2em;
+		vertical-align: text-bottom;
+		line-height: 34px;
+		display: inline-block;
+		margin: 0 auto;
+	}
+	.new-task-form input, .new-task-form textarea {
+		float: right;
+		font-size: 0.9em;
+		line-height: 1.5em;
+		margin-top: 6px;
+	}
+
+	.new-task-form textarea {
+		height: 4em;
+	}
+	.create-task-timing-div {
+		clear: right;
+		padding: 10px;
+		line-height: 1em;
+		background-color: #aad4ee;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.create-task-timing-div label {
+		margin: 0 0;
+		width: 70%;
+	}
+	.time-inputs {
+		text-align: right;
+		padding-right: 15%;
+	}
+	#task_hours, #task_minutes {
+		display: inline-block;
+		float: none;
+		width: 2em;
+	}
+
+	#task_timed, #task_has_goal, #task_has_due_date {
+		height: 26px;
+		margin-left: 3em;
+	}
+	#task_has_due_date {
+		margin-right: 2px;
+	}
+	#has-due-date-span, #has-goal-span, #is-timed-span {
+		width: 100px;
+	}
+
+	#task_has_goal, #has-goal-span {
+		display: none;
+	}
+
+	.create-task-goal-div {
+		display: none;
+	}
+
+	.create-task-goal-div input {
+		float: none;
+	}
+
+	.due-date-label, .timed-label, .goal-label {
+		margin: 0;
+		display: block;
+		text-align: center;
+	}
+
+
+	.add-on {
+		height: 25px !important;
+		width: 25px !important;
+	}
+	#datebtn-back {
+		 height: 25px !important; 
+		 width: 25px !important;
+	}
+
+	#datetimepicker {
+		display: none;
+		padding: 4px;
+		padding-left: 20px;
+	}
+
+	#date-field {
+		float: none !important; 
+		height: 25px !important;
+		margin-top: 0;
+	}
+
+	.new-task-submit {
+		position: absolute;
+		bottom: 10px;
+		right: 10px;
+	}
 }
 /* line 1, ../../app/assets/stylesheets/scaffolds.css.scss */
 body {
@@ -11133,79 +11194,101 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
-.tasks-partial-div {
-	padding-top: 40px;
-	margin: 0 auto;
-	width: 1400px;
+@media (max-device-width:1024px)  {
+	body {
+		background-color: #ff00aa;
+	}
+
+}	
+@media (min-device-width: 1025px) {
+	body {
+		background-color: #ff00aa;
+	}
+
+	html {
+		font-size: 4em;
+	}
+	.tasks-partial-div {
+		padding-top: 40px;
+		margin: 0 0
+		width: 100%;
+		background-image: url("crumble-bg.jpg");
+		border-top: 1px #555 solid;
+	}
+
+	.tasks-wrapper-div {
+		margin: 0 auto;
+		width: 1400px;
+		text-align: center;
+
+	}
+
+	.task-div {
+		width: 350px;
+		height: 350px;
+		background-color: #F8F9Ff;
+		border-radius: 5px;
+		border: 10px rgba(45, 86, 193, 0.5) solid;
+		display: inline-block;
+		margin: 15px 20px;
+		vertical-align:top;
+		font-size: 10px;
+
+		-webkit-box-shadow: 12px 7px 11px 0px rgba(0,0,0,0.63);
+		-moz-box-shadow: 12px 7px 11px 0px rgba(0,0,0,0.63);
+		box-shadow: 12px 7px 11px 0px rgba(0,0,0,0.63);
+	}
+
+	.task-description {
+		margin: 15px auto 10px auto;
+		padding: 4px;
+		border: 1px #ccc solid;
+		width: 300px;
+		height: 7em;
+		font-size: 1.4em;
+		line-height: 1.3em;
+		background-color: #EBEFFF;
+		overflow: ellipsis;
+		font-family: 'PT Serif', serif;
+	}
+
+	.task-name {
+		font-family: 'Glyphicons Halflings', serif;
+		font-size: 1.8em;
+		background-color: #273952;
+		color: #eee;
+		min-height: 2em;
+		padding: 2px 3px 2px 3px;
+		display: block;
+	}
+
+	.task-due {
+		margin: 0 auto;
+		font-size: 1.2em;
+		font-weight: 600;
+	}
+
+
+	content {
+		background-color: rgba(88, 88, 88, 0.5);
+	}
+
 }
+	/*
 
-.tasks-wrapper-div {
-	margin: 0 auto;
-	width: 1400px;
-	text-align: center;
+	.task-description {
+		margin: 15px auto 10px auto;
+		width: 86%;
+		background-color: #EBEFFF;
+		border: 1px #aaa solid;
+		font-size: 1.35em;
+		padding: 8px;
+		line-height: 1.4em;
+		text-align: left;
+		font-family: 'Playfair Display', serif;
+	}
 
-}
-
-.task-div {
-	width: 350px;
-	height: 350px;
-	background-color: #F8F9Ff;
-	border-radius: 5px;
-	border: 10px rgba(45, 86, 193, 0.5) solid;
-	display: inline-block;
-	margin: 5px 20px;
-	vertical-align:top;
-	font-size: 10px;
-}
-
-.task-description {
-	margin: 15px auto 10px auto;
-	padding: 4px;
-	border: 1px #ccc solid;
-	width: 300px;
-	height: 7em;
-	font-size: 1.4em;
-	line-height: 1.3em;
-	background-color: #EBEFFF;
-	overflow: ellipsis;
-	font-family: 'PT Serif', serif;
-}
-
-.task-name {
-	font-family: 'Glyphicons Halflings', serif;
-	font-size: 1.8em;
-	background-color: #273952;
-	color: #eee;
-	min-height: 2em;
-	padding: 2px 3px 2px 3px;
-	display: block;
-}
-
-.task-due {
-	margin: 0 auto;
-	font-size: 1.2em;
-	font-weight: 600;
-}
-
-
-content {
-	background-color: rgba(88, 88, 88, 0.5);
-}
-/*
-
-.task-description {
-	margin: 15px auto 10px auto;
-	width: 86%;
-	background-color: #EBEFFF;
-	border: 1px #aaa solid;
-	font-size: 1.35em;
-	padding: 8px;
-	line-height: 1.4em;
-	text-align: left;
-	font-family: 'Playfair Display', serif;
-}
-
-*/
+	*/
 /* line 1, ../../app/assets/stylesheets/tasks.css.scss */
 table {
   background: #eaeaea;

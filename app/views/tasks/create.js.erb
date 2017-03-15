@@ -1,0 +1,7 @@
+
+$(".tasks-wrapper-div").append("<%= escape_javascript(render partial: 'home/task', locals: { task: @task } ) %>"); 
+$(".task-div-<%= @task.id %>").hide();
+$(".task-div-<%= @task.id %>").show(800);
+
+$("html, body").animate({ scrollTop: $(document).height() });
+$("html, body").animate({ scrollTop: $(document).height() }).delay(800);

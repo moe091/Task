@@ -1,105 +1,121 @@
-.create-task-div {
-	position: relative;
-}
-.create-task-div h1 {
-	text-align: center;
-	color: #000;
-	font-family: 'Roboto Slab', serif;
-}
-
-.create-task-div hr {
-	width: 80%;
-}
-.new-task-form {
-	width: 60%;
-	margin: 0 auto;
-	color: #000;
-}
-
-.new-task-form label {
-	font-size: 1.2em;
-	vertical-align: text-bottom;
-	line-height: 34px;
-	display: inline-block;
-	margin: 0 auto;
-}
-.new-task-form input, .new-task-form textarea {
-	float: right;
-	font-size: 0.9em;
-	height: 30px;
-	line-height: 1.5em;
-}
-
-.new-task-form textarea {
-	height: 4em;
-}
-.create-task-timing-div {
-	clear: right;
-	padding: 10px;
-	line-height: 1em;
-	text-align: center;
-	background-color: #eaf4fd;
-}
-
-.create-task-timing-div label {
-	margin: 3px 20px;
-}
-
-.time-inputs {
-	text-align: center;
-}
-#task_hours, #task_minutes {
-	display: inline-block;
-	float: none;
-	width: 2em;
-}
-
-#task_timed, #task_has_goal, #task_has_due_date {
-	height: 26px;
-	margin-left: 30px;
-}
-
-#task_has_goal, #has-goal-span {
-	display: none;
-}
-
-.create-task-goal-div {
-	margin-top: 8px;
-	display: none;
-}
-
-.create-task-goal-div input {
-	float: none;
-}
-
-.due-date-label {
-	display: block;
-	text-align: center;
-}
+@media (max-device-width:1024px)  {
 
 
-.add-on {
-	height: 25px !important;
-	width: 25px !important;
-}
-#datebtn-back {
-	 height: 25px !important; 
-	 width: 25px !important;
-}
+}	
+@media (min-device-width: 1025px) {
 
-#datetimepicker {
-	display: none;
-	padding: 4px;
-	padding-left: 20px;
-}
+	.create-task-div {
+		position: relative;
+	}
+	.create-task-div h1 {
+		text-align: center;
+		color: #000;
+		font-family: 'Roboto Slab', serif;
+	}
 
-#date-field {
-	float: none !important; 
-	height: 25px !important;
-}
+	.create-task-div hr {
+		width: 80%;
+	}
+	.new-task-form {
+		width: 80%;
+		margin: 0 auto;
+		color: #000;
+	}
 
-.new-task-submit {
-	position: absolute;
-	bottom: 10px;
-	right: 10px;
+	.new-task-form label {
+		font-size: 1.2em;
+		vertical-align: text-bottom;
+		line-height: 34px;
+		display: inline-block;
+		margin: 0 auto;
+	}
+	.new-task-form input, .new-task-form textarea {
+		float: right;
+		font-size: 0.9em;
+		line-height: 1.5em;
+		margin-top: 6px;
+	}
+
+	.new-task-form textarea {
+		height: 4em;
+	}
+	.create-task-timing-div {
+		clear: right;
+		padding: 10px;
+		line-height: 1em;
+		background-color: #aad4ee;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.create-task-timing-div label {
+		margin: 0 0;
+		width: 70%;
+	}
+	.time-inputs {
+		text-align: right;
+		padding-right: 15%;
+	}
+	#task_hours, #task_minutes {
+		display: inline-block;
+		float: none;
+		width: 2em;
+	}
+
+	#task_timed, #task_has_goal, #task_has_due_date {
+		height: 26px;
+		margin-left: 3em;
+	}
+	#task_has_due_date {
+		margin-right: 2px;
+	}
+	#has-due-date-span, #has-goal-span, #is-timed-span {
+		width: 100px;
+	}
+
+	#task_has_goal, #has-goal-span {
+		display: none;
+	}
+
+	.create-task-goal-div {
+		display: none;
+	}
+
+	.create-task-goal-div input {
+		float: none;
+	}
+
+	.due-date-label, .timed-label, .goal-label {
+		margin: 0;
+		display: block;
+		text-align: center;
+	}
+
+
+	.add-on {
+		height: 25px !important;
+		width: 25px !important;
+	}
+	#datebtn-back {
+		 height: 25px !important; 
+		 width: 25px !important;
+	}
+
+	#datetimepicker {
+		display: none;
+		padding: 4px;
+		padding-left: 20px;
+	}
+
+	#date-field {
+		float: none !important; 
+		height: 25px !important;
+		margin-top: 0;
+	}
+
+	.new-task-submit {
+		position: absolute;
+		bottom: 10px;
+		right: 10px;
+	}
 }
