@@ -30,13 +30,13 @@
 	}
 
 	.task-div {
-		width: 350px;
+		width: 320px;
 		height: 350px;
 		background-color: #F8F9Ff;
 		border-radius: 5px;
 		border: 10px rgba(45, 86, 193, 0.5) solid;
 		display: inline-block;
-		margin: 15px 20px;
+		margin: 8px 20px;
 		vertical-align:top;
 		font-size: 10px;
 
