@@ -8,7 +8,7 @@
 
 						<div class="task-timer-div task-timer-div-<%= task.id %>">
 <!-- hadlkfjaw f-->
-							<% if task.timed %>
+							<% if task.completed != 99999 %>
 								<% if task.goal > 0 %>
 									<!--timed and goal, render progress meter -->
 									<div class="percent-back percent-back-<%= task.id %>">
@@ -48,7 +48,7 @@
 						<div class="start-date">Started On<br><%= format_date(task.start_date) %></div>
 
 						<div class="task-buttons">
-							<% if task.timed %>
+							<% if task.completed != 99999 %>
 							<%= puts "\n\n\n\n\n\n\nTIMED\n\n\n\n\n\n\n" %>
 								<button onclick="new_session(<%= task.id %>, '<%= task.name %>', '<%= task.description %>')" class="btn btn-success btn-sm new-session-btn" data-controls-modal="session-modal">New Session</button>
 							<% end %>
