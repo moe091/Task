@@ -25,6 +25,15 @@
 <%= stylesheet_link_tag		"task_list_style", :media => "all" %>
 <%= stylesheet_link_tag		"new_task_style", :media => "all" %>
 
+
+TODO:
+Change goal/completed time display on tasks to show HH/MM instead of MM/SS
+Create Home Page for new users who aren't logged in, replace 'new task' with 'sign up' section
+Implement functionality to automatically end tasks after due date, or when user chooses to, or when user reaches goal
+Create 'completed tasks' display - maybe make it a tab for the current task display area, current tasks / completed tasks tabs
+Improve visual design of New Task form
+Improve visual design of page
+
 -->
 <style type="text/css" rel="stylesheet">
 
@@ -88,23 +97,33 @@
 					<h1>Create New Task</h1>
 
 					<%= form_for @task, remote: true, :url=>'javascript:;', html: {class: "new-task-form"}, data: {user_id: @cur_user.id} do |f| %>
-						<%= f.label "Task Name" %>
-						<%= f.text_field :name, size: "36", data: {user_id: @cur_user.id} %>
-						<br />
-						<%= f.label "Task Description" %>
-						<%= f.text_area :description, cols: "35", rows: "4" %>
-						<br />
+						
+						<div class="Fname-div Fdiv">
+							<span class="Fname-lbl Flbl"><%= f.label "Task Name" %></span>
+							<span class="Fname-field Ffield"><%= f.text_field :name, size: "36", data: {user_id: @cur_user.id} %></span>
+						</div>
+
+						<div class="Fdescription-div Fdiv">
+							<span class="Fdescription-lbl Flbl"><%= f.label "Task Description" %></span>
+							<span class="Fdescription-field Ffield"><%= f.text_area :description, cols: "35", rows: "4" %></span>
+						</div>
+
 
 
 						<div class="create-task-timing-div">
-							<%= f.label "Timed", class: "timed-label" do %>
-								<span id="is-timed-span">Timed?: </span> <%= f.check_box :timed, onclick: "timed_clicked()" %>
-							<% end %>
-							<br />
-							<%= f.label "Goal", class: "goal-label" do %>
-								<span id="has-goal-span">Goal?: </span> <%= f.check_box :has_goal, onclick: "goal_clicked()" %>
-							<% end %>
-							<br />
+							
+ <input id="timed-slider" type="text"
+          data-provide="slider"
+          data-slider-ticks="[1, 2, 3]"
+          data-slider-ticks-labels='["Untimed", "Timed", "Goal"]'
+          data-slider-min="1"
+          data-slider-max="3"
+          data-slider-step="1"
+          data-slider-value="1"
+          data-slider-tooltip="hide" />
+
+
+
 							<div class="create-task-goal-div">
 									<div class="time-inputs">
 										Hours: <%= f.text_field :hours, size: "4" %> 
@@ -145,7 +164,13 @@
 						</div><!-- create-task-timing-div -->
 					<% end %>
 					<button onclick="submit_new_task(<%= @cur_user.id %>)" class="new-task-submit btn btn-success">Create Task</button>
+			<% else %> <!-- not logged in -->
+				<div class="register-div">
+					<h1>Welcome to Task-Time</h1>
+					<span class="sign-up-or-in"><a href="#">Sign in</a> or register below to get started!</span>
+				</div>
 			<% end %>
+
 
 						
 				</div><!-- create task div -->

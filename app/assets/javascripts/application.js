@@ -16,3 +16,10 @@
 //= require bootstrap.min
 //= require moment
 //= require bootstrap-datetimepicker.min
+//= require bootstrap-slider
+
+$(function() {
+  $('.slider').slider();
+});
+
+

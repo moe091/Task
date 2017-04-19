@@ -6,6 +6,7 @@ gem 'momentjs-rails'
 gem 'test-unit'
 	gem 'pg', '0.18.4'
 gem 'activerecord-postgresql-adapter'
+gem 'bootstrap-slider-rails'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development do 

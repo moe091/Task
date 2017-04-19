@@ -9,8 +9,11 @@
 	}
 	.create-task-div h1 {
 		text-align: center;
-		color: #000;
+		color: #92aaca;
 		font-family: 'Roboto Slab', serif;
+		text-shadow: 4px 4px 2px rgba(0, 0, 0, 1);
+		margin-bottom: 15px;
+     
 	}
 
 	.create-task-div hr {
@@ -18,7 +21,7 @@
 	}
 	.new-task-form {
 		margin: 0 auto;
-		color: #000;
+		color: #b8cee6;
 	}
 
 	.new-task-form label {
@@ -29,11 +32,10 @@
 		margin: 0 auto;
 	}
 	.new-task-form input, .new-task-form textarea {
-		float: right;
 		font-size: 0.9em;
 		line-height: 1.5em;
-		margin-top: 6px;
-		margin-right: 30px;
+		float: none !important;
+		margin-left: 5px;
 	}
 
 	.new-task-form textarea {
@@ -43,9 +45,10 @@
 		clear: right;
 		padding: 10px;
 		line-height: 1em;
-		background-color: #aad4ee;
-		width: 100%;
-		margin: 0 auto;
+		background-color: rgba(88, 100, 111, 0.4);
+		width: 486px;
+		margin: 10px auto;
+		margin-left: -3px;
 	}
 
 	.create-task-timing-div label {
@@ -118,4 +121,7 @@
 		bottom: 10px;
 		right: 10px;
 	}
+
+
+
 }

@@ -82,6 +82,9 @@ function pickDate() {
 
 
 
+
+
+
 //_____________TIMER___________\\
 var seconds = 0;
 var timing = false;
@@ -343,11 +346,22 @@ function time_period_click(val) {
 	}
 }
 
+var timedVal = 1;
+
 $(document).ready(function() {
 	console.log("READY");
   	$('input[name="time-period-chk"]').change( function() {
   		alert($(this).val())
 	})
+
+	$('.create-task-timing-div').click(function() {
+		timedVal = $("#timed-slider")[0].value;
+		console.log(timedVal);
+		console.log("SLIDER");
+		console.log($("#timed-slider")[0].value);
+	});
+
+
 });
 
 
